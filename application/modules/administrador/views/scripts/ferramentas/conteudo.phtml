@@ -1,0 +1,48 @@
+<?php echo $this->headTitle()->prepend('Lista de Conteudos'); ?>
+
+<h1 class="grid_12 margin-top no-margin-top-phone">Lista de Conteudos</h1>
+
+<div class="grid_12">
+    <?php echo $this->flashMessages(); ?>
+</div>
+
+<div class="grid_12">
+    <a href="<?php echo $this->url(array('module' => 'administrador', 'controller' => 'ferramentas', 'action' => 'adicionar-conteudo')); ?>" class="button block blue" style="float: right;">
+        Adicionar novo Conteudo
+    </a>
+</div>
+
+<div class="grid_12">
+    <div class="box">
+        <div class="header">
+            <h2><img class="icon" src="<?php echo $this->baseUrl('/static/img/adm/icons/packs/fugue/16x16/application-list.png'); ?>">Lista de Conteudos Cadastrados</h2>
+        </div>
+        <div class="content">
+            <table class="dynamic styled" data-filter-Bar="always" data-table-tools='{"display":false}'>
+                <thead>
+                    <tr>
+                        <th>ID</th>
+                        <th>Titulo</th>
+                        <th>Opções</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <?php foreach ($this->results as $results): ?>
+                        <tr>
+                            <td><?php echo $results->id; ?></td>
+                            <td><?php echo $results->title; ?></td>
+                            <td class="center-elements">
+                                <a href="<?php echo $this->url(array('module' => 'administrador', 'controller' => 'ferramentas', 'action' => 'editar-conteudo', 'id' => $results->id)); ?>" class="button block blue" style="float: right;">
+                                    Editar Conteudo
+                                </a>
+                                <a href="<?php echo $this->url(array('module' => 'administrador', 'controller' => 'ferramentas', 'action' => 'adicionar-excluir')); ?>" class="button block red" style="float: right;">
+                                    Excluir Conteudo
+                                </a>
+                            </td>
+                        </tr>
+                    <?php endforeach; ?>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>

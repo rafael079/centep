@@ -1,0 +1,325 @@
+<?php echo $this->headTitle()->prepend('Editar Aluno'); ?>
+<h1 class="grid_12 margin-top no-margin-top-phone">Editar Aluno</h1>
+
+<div class="grid_12">
+    <?php echo $this->flashMessages(); ?>
+</div>
+
+<form method="<?php echo $this->form->getMethod(); ?>" action="<?php echo $this->form->getAction(); ?>"  class="grid_12 validate">
+    <fieldset>
+        <?php echo $this->form->conclusion; ?>
+         <div class="row">
+            <label for="situation">
+                <strong>Situação do Aluno</strong>
+                <small>Alterar a situação do Aluno.</small>
+            </label>
+            <div>
+                <?php echo $this->form->situation; ?>
+            </div>
+        </div>
+         <div class="row">
+            <label for="courses">
+                <strong>Selecione um Status</strong>
+                <small>Selecione a situação do aluno.</small>
+            </label>
+            <div>
+                <?php echo $this->form->status; ?>
+            </div>
+        </div>
+    </fieldset>
+    <fieldset>
+        <legend>Dados Pessoais</legend>
+        <div class="row">
+            <label for="name">
+                <strong>Nome completo</strong>
+                <small>Informe o nome completo do aluno</small>
+            </label>
+            <div>
+                <?php echo $this->form->name; ?>
+            </div>
+        </div>
+        <div class="row">
+            <label for="mail">
+                <strong>E-Mail</strong>
+                <small>Informe o e-mail do aluno</small>
+            </label>
+            <div>
+                <?php echo $this->form->mail; ?>
+            </div>
+        </div>
+        <div class="row">
+            <label for="identity">
+                <strong>Identidade</strong>
+                <small>Informe o numero da Identidade do aluno</small>
+            </label>
+            <div>
+                <?php echo $this->form->identity; ?>
+            </div>
+        </div>
+        <div class="row">
+            <label for="cpf">
+                <strong>CPF</strong>
+                <small>Informe o CPF do aluno</small>
+            </label>
+            <div>
+                <?php echo $this->form->cpf; ?>
+            </div>
+        </div>
+        <div class="row">
+            <label for="birth">
+                <strong>Data de Nascimento</strong>
+                <small>Informe a data de nascimento do aluno</small>
+            </label>
+            <div>
+                <?php echo $this->form->birth; ?>
+            </div>
+        </div>
+        <div class="row">
+            <label for="racial">
+                <strong>Cor / Raça</strong>
+                <small>Informe cor / raça: do aluno</small>
+            </label>
+            <div>
+                <?php echo $this->form->racial; ?>
+            </div>
+        </div>
+        <div class="row">
+            <label for="sex">
+                <strong>Sexo</strong>
+                <small>Informe sexo do aluno</small>
+            </label>
+            <div>
+                <?php echo $this->form->sex; ?>
+            </div>
+        </div>
+        <div class="row">
+            <label for="nationality">
+                <strong>Nacionalidade</strong>
+                <small>Informe nacionalidade do aluno</small>
+            </label>
+            <div>
+                <?php echo $this->form->nationality; ?>
+            </div>
+        </div>
+        <div class="row">
+            <label for="naturalness">
+                <strong>Naturalidade</strong>
+                <small>Informe naturalidade do aluno</small>
+            </label>
+            <div>
+                <?php echo $this->form->naturalness; ?>
+            </div>
+        </div>
+        <div class="row">
+            <label for="state">
+                <strong>Estado</strong>
+                <small>Informe estado do aluno</small>
+            </label>
+            <div>
+                <?php echo $this->form->state; ?>
+            </div>
+        </div>
+        <div class="row">
+            <label for="phone">
+                <strong>Telefone</strong>
+                <small>Informe telefone do aluno</small>
+            </label>
+            <div>
+                <?php echo $this->form->phone; ?>
+            </div>
+        </div>
+        <div class="row">
+            <label for="needs">
+                <strong>Portador de Necessidades Especiais</strong>
+                <small>Informe se o aluno nescessita de cuidados especiais</small>
+            </label>
+            <div>
+                <div><?php echo $this->form->needs; ?></div>
+            </div>
+        </div>
+        <div class="row">
+            <label for="needs_details">
+                <strong>Quais Necessidades Especiais</strong>
+                <small>Informe quais as necessidades especiais do aluno</small>
+            </label>
+            <div>
+                <?php echo $this->form->needs_details; ?>
+            </div>
+        </div>
+    </fieldset>
+
+    <fieldset>
+        <legend>Parentesco</legend>
+        <div class="row">
+            <label for="father">
+                <strong>Nome do Pai</strong>
+                <small>Informe nome do pai do aluno</small>
+            </label>
+            <div>
+                <?php echo $this->form->father; ?>
+            </div>
+        </div>
+        <div class="row">
+            <label for="job_father">
+                <strong>Profissão do Pai</strong>
+                <small>Informe a profissão do pai do aluno</small>
+            </label>
+            <div>
+                <?php echo $this->form->job_father; ?>
+            </div>
+        </div>
+        <div class="row">
+            <label for="mother">
+                <strong>Nome da Mãe</strong>
+                <small>Informe o nome da mãe do aluno</small>
+            </label>
+            <div>
+                <?php echo $this->form->mother; ?>
+            </div>
+        </div>
+        <div class="row">
+            <label for="job_mother">
+                <strong>Profissão da Mãe</strong>
+                <small>Informe a profissão da mãe do aluno</small>
+            </label>
+            <div>
+                <?php echo $this->form->job_mother; ?>
+            </div>
+        </div>
+        <div class="row">
+            <label for="responsible">
+                <strong>Nome do Responsavel</strong>
+                <small>Informe o nome do responsável do aluno menor de idade</small>
+            </label>
+            <div>
+                <?php echo $this->form->responsible; ?>
+            </div>
+        </div>
+        <div class="row">
+            <label for="responsible_parent">
+                <strong>Grau de Parentesco</strong>
+                <small>Informe o grau de parentesco do responsável do aluno menor de idade</small>
+            </label>
+            <div>
+                <?php echo $this->form->responsible_parent; ?>
+            </div>
+        </div>
+    </fieldset>
+
+    <fieldset>
+        <legend>Localização</legend>
+        <div class="row">
+            <label for="address">
+                <strong>Endereço</strong>
+                <small>Informe o endereço do aluno</small>
+            </label>
+            <div>
+                <?php echo $this->form->address; ?>
+            </div>
+        </div>
+        <div class="row">
+            <label for="number">
+                <strong>Número</strong>
+                <small>Informe o número da residência do aluno</small>
+            </label>
+            <div>
+                <?php echo $this->form->number; ?>
+            </div>
+        </div>
+        <div class="row">
+            <label for="complement">
+                <strong>Complemento</strong>
+                <small>Informe o complemento de endereço do aluno</small>
+            </label>
+            <div>
+                <?php echo $this->form->complement; ?>
+            </div>
+        </div>
+        <div class="row">
+            <label for="neighborhood">
+                <strong>Bairro</strong>
+                <small>Informe o bairro do aluno</small>
+            </label>
+            <div>
+                <?php echo $this->form->neighborhood; ?>
+            </div>
+        </div>
+        <div class="row">
+            <label for="city">
+                <strong>Município</strong>
+                <small>Informe o município do aluno</small>
+            </label>
+            <div>
+                <?php echo $this->form->city; ?>
+            </div>
+        </div>
+        <div class="row">
+            <label for="state_address">
+                <strong>Estado</strong>
+                <small>Informe o estado do aluno</small>
+            </label>
+            <div>
+                <?php echo $this->form->state_address; ?>
+            </div>
+        </div>
+        <div class="row">
+            <label for="cep">
+                <strong>CEP</strong>
+                <small>Informe o CEP do aluno</small>
+            </label>
+            <div>
+                <?php echo $this->form->cep; ?>
+            </div>
+        </div>
+    </fieldset>
+    
+    <fieldset>
+        <legend>Acesso Online</legend>
+        <div class="row">
+            <label for="username">
+                <strong>Username</strong>
+                <small>Não é possivel alterar o Username</small>
+            </label>
+            <div>
+                <?php echo $this->form->username; ?>
+            </div>
+        </div>
+        <div class="row">
+            <label for="password">
+                <strong>Senha</strong>
+                <small>Informe o Senha para o aluno - Caso queira altera-la</small>
+            </label>
+            <div>
+                <?php echo $this->form->password; ?>
+            </div>
+        </div>
+    </fieldset>
+
+    <fieldset>
+        <legend>Selecione um Curso</legend>
+        <div class="row">
+            <label for="courses">
+                <strong>Selecione um Curso</strong>
+                <small>Não é possivel alterar o curso já escolhido.</small>
+            </label>
+            <div>
+                <?php echo $this->form->courses; ?>
+            </div>
+        </div>
+                <div class="row">
+            <label for="classes">
+                <strong>Selecione a Turma</strong>
+                <small>Selecione a turma do aluno.</small>
+            </label>
+            <div>
+                <?php echo $this->form->classes; ?>
+            </div>
+        </div>
+    </fieldset>
+    
+    <div class="actions">
+        <div class="left">
+            <?php echo $this->form->send; ?>
+        </div>
+    </div>
+</form>

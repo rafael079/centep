@@ -1,0 +1,52 @@
+<?php echo $this->headTitle()->prepend('Cursos ' . $this->results->name); ?>
+<div class="tag_line">
+    <div class="container">
+        <div class="row">
+            <div class="span12">
+                <div class="welcome">
+                    <h3 class="wel_rig"><span class="colored">Curso</span><span class="colored">:</span> <?php echo $this->results->name; ?></h3>
+                    <div class="wel_mag"><div class="bbread"><a class="subpage_block" href="<?php echo $this->url(array('module' => 'default', 'controller' => 'index', 'action' => 'index')); ?>">Inicio</a><div class="subpage_breadcrumbs_dv"></div>Cursos</div></div>
+                    <div class="clearfix"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div><!-- /tag_line -->
+
+<div class="main_content_area">
+    <div class="container">
+        <div class="row">
+            <div class="span3">						
+                <h3 class="title marg_serch"><span>Outros Cursos</span></h3>	
+                <ul class="categories">
+                    <?php foreach ($this->more as $more): ?>
+                        <li><a href="<?php echo $this->url(array('module' => 'cursos', 'controller' => 'sobre', 'action' => 'index', 'curso' => $more->id)); ?>"><?php echo ucwords(strtolower($more->name)); ?></a></li>
+                    <?php endforeach; ?>
+                </ul>
+            </div>
+            <div class="span9">
+                <div class="marg20">
+                    <div class="post">
+                        <div class="post-content" style="margin-top: 0px;">
+                            <div class="meta" style="margin-left: 0px;">
+                                <h2><?php echo ucwords(strtolower($this->results->name)); ?></h2>
+                                <span><i class="icon-adjust"></i> Carga Horária: <?php echo $this->results->workload; ?> Horas</span>
+                                <span><i class="icon-tags"></i> Valor: R$ <?php echo $this->results->value; ?></span>
+                            </div>
+                            <p class="about_text input">
+                                <?php echo $this->results->description; ?>
+                            </p>
+                            <div class="author-info"> 
+                                <div class="author-bio">
+                                    <h4>Faça sua Matricula</h4> 
+                                    Precha agora o formulário de cadastro online se matricule no curso <i><?php echo ucwords(strtolower($this->results->name)); ?></i>.<br>
+                                    <a href="<?php echo $this->url(array('module' => 'cursos', 'controller' => 'cadastro', 'action' => 'index', 'curso' => $this->results->id)); ?>"><span class="badge badge-success">Cadastre-se aqui!</span></a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div><!-- /main_content_area -->

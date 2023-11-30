@@ -1,0 +1,10 @@
+<?xml version="1.0"?>
+<zend-config xmlns:zf="http://framework.zend.com/xml/zend-config-xml/1.0/">
+  <web>
+    <title>CENTEP</title>
+    <slogan>Centro Tecnol&#xF3;gico e Forma&#xE7;&#xE3;o Profissional</slogan>
+    <email>ros.rock079@gmail.com</email>
+    <tags>escola t&#xE9;cnica, cursos, cursos t&#xE9;cnicos, centep, mec, meio ambiente, t&#xE9;cnico em minera&#xE7;&#xE3;o, t&#xE9;cnico em seguran&#xE7;a do trabalho, escola t&#xE9;cnica</tags>
+    <description>O CENTEP escola t&#xE9;cnica autorizada pelo MEC que oferece os Cursos T&#xE9;cnico em Meio Ambiente, T&#xE9;cnico em Minera&#xE7;&#xE3;o e T&#xE9;cnico em Seguran&#xE7;a do Trabalho  vem tra&#xE7;ando, juntamente com sua Entidade Mantenedora, um caminho educacional a partir de 2005 visando a implanta&#xE7;&#xE3;o de uma Escola com cursos T&#xE9;cnicos nas &#xE1;reas de ind&#xFA;stria, meio ambiente e de minera&#xE7;&#xE3;o</description>
+  </web>
+</zend-config>

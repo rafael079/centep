@@ -1,0 +1,65 @@
+<?php echo $this->headTitle()->prepend('Configurações do Sistema'); ?>
+<h1 class="grid_12 margin-top no-margin-top-phone">Configurações do Sistema</h1>
+
+<div class="grid_12">
+    <?php echo $this->flashMessages(); ?>
+</div>
+
+<form method="<?php echo $this->form->getMethod(); ?>" action="<?php echo $this->form->getAction(); ?>" class="grid_12 validate">
+    <fieldset>
+        <legend>Configurações do Sistema</legend>
+        <div class="row">
+            <label for="title">
+                <strong>Titulo do Site</strong>
+                <small>Informe um titulo para o site</small>
+            </label>
+            <div>
+                <?php echo $this->form->title; ?>
+            </div>
+        </div>
+        <div class="row">
+            <label for="slogan">
+                <strong>Slogan do Site</strong>
+                <small>Informe um slogan para o site</small>
+            </label>
+            <div>
+                <?php echo $this->form->slogan; ?>
+            </div>
+        </div>
+        <div class="row">
+            <label for="email">
+                <strong>E-mail Principal</strong>
+                <small>E-mail a ser usado pelo sistema</small>
+            </label>
+            <div>
+                <?php echo $this->form->email; ?>
+            </div>
+        </div>
+    </fieldset> 
+    <fieldset>
+        <legend>Opções de SEO</legend>
+        <div class="row">
+            <label for="tags">
+                <strong>Meta Tags</strong>
+                <small>Meta tags do site</small>
+            </label>
+            <div>
+                <?php echo $this->form->tags; ?>
+            </div>
+        </div>
+        <div class="row">
+            <label for="description">
+                <strong>Meta Descrição</strong>
+                <small>Descrição do site</small>
+            </label>
+            <div>
+                <?php echo $this->form->description; ?>
+            </div>
+        </div>
+    </fieldset>
+    <div class="actions">
+        <div class="left">
+            <?php echo $this->form->send; ?>
+        </div>
+    </div>
+</form>

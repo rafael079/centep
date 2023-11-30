@@ -1,0 +1,122 @@
+<?php echo $this->doctype(); ?>
+<html>
+    <head>
+        <?php echo $this->headMeta(); ?>
+        <?php echo $this->headTitle(); ?>
+
+        <link rel="dns-prefetch" href="http://fonts.googleapis.com" />
+        <link rel="dns-prefetch" href="http://themes.googleusercontent.com" />
+
+        <link rel="dns-prefetch" href="http://ajax.googleapis.com" />
+        <link rel="dns-prefetch" href="http://cdnjs.cloudflare.com" />
+        <link rel="dns-prefetch" href="http://agorbatchev.typepad.com" />
+
+        <link rel="stylesheet" href="<?php echo $this->baseUrl('/static/css/adm/style.css'); ?>">
+        <link rel="stylesheet" href="<?php echo $this->baseUrl('/static/css/adm/grid.css'); ?>">
+        <link rel="stylesheet" href="<?php echo $this->baseUrl('/static/css/adm/layout.css'); ?>">
+
+        <link rel="stylesheet" href="<?php echo $this->baseUrl('/static/css/adm/icons.css'); ?>">
+        <link rel="stylesheet" href="<?php echo $this->baseUrl('/static/css/adm/fonts/font-awesome.css'); ?>">
+        <!--[if IE 8]><link rel="stylesheet" href="<?php echo $this->baseUrl('/static/css/adm/fonts/font-awesome-ie7.css'); ?>"><![endif]-->
+
+        <link rel="stylesheet" href="<?php echo $this->baseUrl('/static/css/adm/external/jquery-ui-1.8.21.custom.css'); ?>">
+        <link rel="stylesheet" href="<?php echo $this->baseUrl('/static/css/adm/external/jquery.chosen.css'); ?>">
+        <link rel="stylesheet" href="<?php echo $this->baseUrl('/static/css/adm/external/jquery.cleditor.css'); ?>">
+        <link rel="stylesheet" href="<?php echo $this->baseUrl('/static/css/adm/external/jquery.colorpicker.css'); ?>">
+        <link rel="stylesheet" href="<?php echo $this->baseUrl('/static/css/adm/external/jquery.elfinder.css'); ?>">
+        <link rel="stylesheet" href="<?php echo $this->baseUrl('/static/css/adm/external/jquery.fancybox.css'); ?>">
+        <link rel="stylesheet" href="<?php echo $this->baseUrl('/static/css/adm/external/jquery.jgrowl.css'); ?>">
+        <link rel="stylesheet" href="<?php echo $this->baseUrl('/static/css/adm/external/jquery.plupload.queue.css'); ?>">
+        <link rel="stylesheet" href="<?php echo $this->baseUrl('/static/css/adm/external/syntaxhighlighter/shCore.css'); ?>" />
+        <link rel="stylesheet" href="<?php echo $this->baseUrl('/static/css/adm/external/syntaxhighlighter/shThemeDefault.css'); ?>" />
+
+        <link rel="stylesheet" href="<?php echo $this->baseUrl('/static/css/adm/elements.css'); ?>">
+        <link rel="stylesheet" href="<?php echo $this->baseUrl('/static/css/adm/forms.css'); ?>">
+        <link rel="stylesheet" href="<?php echo $this->baseUrl('/static/css/adm/typographics.css'); ?>">
+        <link rel="stylesheet" href="<?php echo $this->baseUrl('/static/css/adm/media-queries.css'); ?>">
+        <link rel="stylesheet" href="<?php echo $this->baseUrl('/static/css/adm/ie-fixes.css'); ?>">
+        <?php echo $this->headLink(); ?>
+
+        <script type="text/javascript">
+            window.WebFontConfig = {
+                google: {families: ['PT Sans:400,700']},
+                active: function() {
+                    $(window).trigger('fontsloaded');
+                }
+            };
+        </script>
+        <script defer async src="https://ajax.googleapis.com/ajax/libs/webfont/1.0.28/webfont.js"></script>
+        <script src="<?php echo $this->baseUrl('/static/js/adm/mylibs/polyfills/modernizr-2.6.1.min.js'); ?>"></script>
+        <script src="<?php echo $this->baseUrl('/static/js/adm/mylibs/polyfills/respond.js'); ?>"></script>
+        <script src="<?php echo $this->baseUrl('/static/js/adm/mylibs/polyfills/matchmedia.js'); ?>"></script>
+        <!--[if lt IE 9]><script src="<?php echo $this->baseUrl('/static/js/adm/mylibs/polyfills/selectivizr.js'); ?>"></script><![endif]-->
+        <!--[if lt IE 10]><script src="<?php echo $this->baseUrl('/static/js/adm/mylibs/polyfills/excanvas.js'); ?>"></script><![endif]-->
+        <!--[if lt IE 10]><script src="<?php echo $this->baseUrl('/static/js/adm/mylibs/polyfills/classlist.js'); ?>"></script><![endif]-->
+        <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.js"></script>
+        <script>window.jQuery || document.write('<script src="<?php echo $this->baseUrl('/static/js/adm/libs/jquery-1.7.2.js'); ?>"><\/script>');</script>
+
+        <script src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.8.21/jquery-ui.js"></script>
+        <script>window.jQuery.ui || document.write('<script src="<?php echo $this->baseUrl('/static/js/adm/libs/jquery-ui-1.8.21.js'); ?>"><\/script>');</script>
+
+        <!--[if gt IE 8]><!-->
+        <script src="http://cdnjs.cloudflare.com/ajax/libs/lodash.js/0.4.2/lodash.js"></script>
+        <script>window._ || document.write('<script src="<?php echo $this->baseUrl('/static/js/adm/libs/lo-dash.js'); ?>"><\/script>');</script>
+        <!--<![endif]-->
+        <!-- IE8 doesn't like lodash -->
+        <!--[if lt IE 9]><script src="http://documentcloud.github.com/underscore/underscore.js"></script><![endif]-->
+
+        <script src="<?php echo $this->baseUrl('/static/js/adm/mylibs/jquery.hashchange.js'); ?>"></script>
+        <script src="<?php echo $this->baseUrl('/static/js/adm/mylibs/jquery.idle-timer.js'); ?>"></script>
+        <script src="<?php echo $this->baseUrl('/static/js/adm/mylibs/jquery.plusplus.js'); ?>"></script>
+        <script src="<?php echo $this->baseUrl('/static/js/adm/mylibs/jquery.jgrowl.js'); ?>"></script>
+        <script src="<?php echo $this->baseUrl('/static/js/adm/mylibs/jquery.scrollTo.js'); ?>"></script>
+        <script src="<?php echo $this->baseUrl('/static/js/adm/mylibs/jquery.ui.touch-punch.js'); ?>"></script>
+        <script src="<?php echo $this->baseUrl('/static/js/adm/mylibs/jquery.ui.multiaccordion.js'); ?>"></script>
+        <script src="<?php echo $this->baseUrl('/static/js/adm/mylibs/number-functions.js'); ?>"></script>
+
+        <script src="<?php echo $this->baseUrl('/static/js/adm/mylibs/forms/jquery.autosize.js'); ?>"></script>
+        <script src="<?php echo $this->baseUrl('/static/js/adm/mylibs/forms/jquery.checkbox.js'); ?>"></script>
+        <script src="<?php echo $this->baseUrl('/static/js/adm/mylibs/forms/jquery.chosen.js'); ?>"></script>
+        <script src="<?php echo $this->baseUrl('/static/js/adm/mylibs/forms/jquery.cleditor.js'); ?>"></script>
+        <script src="<?php echo $this->baseUrl('/static/js/adm/mylibs/forms/jquery.colorpicker.js'); ?>"></script>
+        <script src="<?php echo $this->baseUrl('/static/js/adm/mylibs/forms/jquery.ellipsis.js'); ?>"></script>
+        <script src="<?php echo $this->baseUrl('/static/js/adm/mylibs/forms/jquery.fileinput.js'); ?>"></script>
+        <script src="<?php echo $this->baseUrl('/static/js/adm/mylibs/forms/jquery.fullcalendar.js'); ?>"></script>
+        <script src="<?php echo $this->baseUrl('/static/js/adm/mylibs/forms/jquery.maskedinput.js'); ?>"></script>
+        <script src="<?php echo $this->baseUrl('/static/js/adm/mylibs/forms/jquery.mousewheel.js'); ?>"></script>
+        <script src="<?php echo $this->baseUrl('/static/js/adm/mylibs/forms/jquery.placeholder.js'); ?>"></script>
+        <script src="<?php echo $this->baseUrl('/static/js/adm/mylibs/forms/jquery.pwdmeter.js'); ?>"></script>
+        <script src="<?php echo $this->baseUrl('/static/js/adm/mylibs/forms/jquery.ui.datetimepicker.js'); ?>"></script>
+        <script src="<?php echo $this->baseUrl('/static/js/adm/mylibs/forms/jquery.ui.spinner.js'); ?>"></script>
+        <script src="<?php echo $this->baseUrl('/static/js/adm/mylibs/forms/jquery.validate.js'); ?>"></script>
+        <script src="<?php echo $this->baseUrl('/static/js/adm/mylibs/forms/uploader/plupload.js'); ?>"></script>
+        <script src="<?php echo $this->baseUrl('/static/js/adm/mylibs/forms/uploader/plupload.html5.js'); ?>"></script>
+        <script src="<?php echo $this->baseUrl('/static/js/adm/mylibs/forms/uploader/plupload.html4.js'); ?>"></script>
+        <script src="<?php echo $this->baseUrl('/static/js/adm/mylibs/forms/uploader/plupload.flash.js'); ?>"></script>
+        <script src="<?php echo $this->baseUrl('/static/js/adm/mylibs/forms/uploader/jquery.plupload.queue/jquery.plupload.queue.js'); ?>"></script>
+        <script src="<?php echo $this->baseUrl('/static/js/adm/mylibs/charts/jquery.flot.js'); ?>"></script>
+        <script src="<?php echo $this->baseUrl('/static/js/adm/mylibs/charts/jquery.flot.orderBars.js'); ?>"></script>
+        <script src="<?php echo $this->baseUrl('/static/js/adm/mylibs/charts/jquery.flot.pie.js'); ?>"></script>
+        <script src="<?php echo $this->baseUrl('/static/js/adm/mylibs/charts/jquery.flot.resize.js'); ?>"></script>
+        <script src="<?php echo $this->baseUrl('/static/js/adm/mylibs/explorer/jquery.elfinder.js'); ?>"></script>
+        <script src="<?php echo $this->baseUrl('/static/js/adm/mylibs/fullstats/jquery.css-transform.js'); ?>"></script>
+        <script src="<?php echo $this->baseUrl('/static/js/adm/mylibs/fullstats/jquery.animate-css-rotate-scale.js'); ?>"></script>
+        <script src="<?php echo $this->baseUrl('/static/js/adm/mylibs/fullstats/jquery.sparkline.js'); ?>"></script>
+        <script src="<?php echo $this->baseUrl('/static/js/adm/mylibs/syntaxhighlighter/shCore.js'); ?>"></script>
+        <script src="<?php echo $this->baseUrl('/static/js/adm/mylibs/syntaxhighlighter/shAutoloader.js'); ?>"></script>
+        <script src="<?php echo $this->baseUrl('/static/js/adm/mylibs/dynamic-tables/jquery.dataTables.js'); ?>"></script>
+        <script src="<?php echo $this->baseUrl('/static/js/adm/mylibs/dynamic-tables/jquery.dataTables.tableTools.zeroClipboard.js'); ?>"></script>
+        <script src="<?php echo $this->baseUrl('/static/js/adm/mylibs/dynamic-tables/jquery.dataTables.tableTools.js'); ?>"></script>
+        <script src="<?php echo $this->baseUrl('/static/js/adm/mylibs/gallery/jquery.fancybox.js'); ?>"></script>
+        <script src="<?php echo $this->baseUrl('/static/js/adm/mylibs/tooltips/jquery.tipsy.js'); ?>"></script>
+        <script src="<?php echo $this->baseUrl('/static/js/adm/mango.js'); ?>"></script>
+        <script src="<?php echo $this->baseUrl('/static/js/adm/plugins.js'); ?>"></script>
+        <script src="<?php echo $this->baseUrl('/static/js/adm/script.js'); ?>"></script>
+        <?php echo $this->headScript(); ?>
+
+    </head>
+    <body class="login">
+        <?php echo $this->layout()->content; ?>
+        <script>$$.loaded();</script>
+    </body>
+</html>

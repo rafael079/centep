@@ -1,0 +1,26 @@
+<?php echo $this->headTitle()->prepend('Excluir Grupo'); ?>
+<h1 class="grid_12 margin-top no-margin-top-phone">Excluir Grupo</h1>
+
+<div class="grid_12">
+    <div class="box">
+        <div class="header">
+            <h2><span class="icon icon-warning-sign"></span>Confirmar Exclusão do Grupo</h2>
+        </div>
+        <div class="content center-elements">
+            <p>
+                Você tem certesa que deseja excluir o Grupo: <span class="badge block blue dark"><?php echo strtoupper($this->results->name); ?></span> <strong>permanentemente</strong>?
+            </p>
+            <p>
+                <a class="button block red" href="<?php echo $this->url(array('module' => 'administrador', 'controller' => 'usuarios', 'action' => 'excluir-grupo', 'id' => $this->results->id, 'confirmar' => 1)); ?>">Confirmar Exclusão!</a>
+            </p>
+        </div>
+    </div>
+</div>
+
+<div class="grid_12">
+    <div class="box">
+        <div class="content">
+            <p><strong>IMPORTANTE:</strong> Você não deve excluir os grupos que contenham usuários, pois as permissões de um usuário cujo o grupo foi excluído serão perdidas, desta forma o usuário terá problemas para acessar o sistema administrativo.    </p>
+        </div>
+    </div>
+</div>

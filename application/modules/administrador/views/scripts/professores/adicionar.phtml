@@ -1,0 +1,27 @@
+<?php echo $this->headTitle()->prepend('Cadastrar Disciplinas'); ?>
+
+<h1 class="grid_12 margin-top no-margin-top-phone">Cadastrar Professores</h1>
+
+<div class="grid_12">
+    <?php echo $this->flashMessages(); ?>
+</div>
+
+<form method="<?php echo $this->form->getMethod(); ?>" action="<?php echo $this->form->getAction(); ?>" class="grid_12 validate">
+    <fieldset>
+        <legend>Cadastrar Professores - Selecione um Curso</legend>
+        <div class="row">
+            <label for="courses">
+                <strong>Selecione um Curso</strong>
+                <small>Informe o curso do professor</small>
+            </label>
+            <div>
+                <?php echo $this->form->courses; ?>
+            </div>
+        </div>
+    </fieldset>
+    <div class="actions">
+        <div class="left">
+            <?php echo $this->form->send; ?>
+        </div>
+    </div>
+</form>

@@ -1,0 +1,72 @@
+<?php echo $this->headTitle()->prepend('Grupos de Usuários'); ?>
+<h1 class="grid_12 margin-top no-margin-top-phone">Grupos de Usuários</h1>
+
+<div class="grid_12">
+    <?php echo $this->flashMessages(); ?>
+</div>
+
+<div class="grid_12">
+    <a href="<?php echo $this->url(array('module' => 'administrador', 'controller' => 'usuarios', 'action' => 'adicionar-grupos')); ?>" class="button block blue" style="float: right;">
+        Adicionar novo Grupo
+    </a>
+</div>
+
+<div class="grid_12">
+    <div class="box">
+        <div class="header">
+            <h2><img class="icon" src="<?php echo $this->baseUrl('/static/img/adm/icons/packs/fugue/16x16/lock--plus.png'); ?>">Grupos e Permissões</h2>
+        </div>
+        <div class="content">
+            <table class="dynamic styled" data-filter-Bar="always" data-table-tools='{"display":false}'>
+                <thead>
+                    <tr>
+                        <th>ID</th>
+                        <th>Nome do Grupo</th>
+                        <th>Permissões</th>
+                        <th>Opções</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <?php foreach ($this->results as $results): ?>
+                        <tr>
+                            <td class="center"><?php echo $results->id; ?></td>
+                            <td class="center"><span class="badge block blue"><?php echo $results->name; ?></span></td>
+                            <td class="center">
+                                <?php $permissions = explode("|", $results->permissions); ?>
+                                <?php foreach ($permissions as $permission) : ?>
+                                    <?php if($permission == 1 ): ?>
+                                        <button type="button" class="button block green">Todas as Opções</button>
+                                    <?php elseif($permission == 2 ): ?>
+                                        <button type="button" class="button block grey">Gerenciar Usuarios</button>
+                                    <?php elseif($permission == 3 ): ?>
+                                        <button type="button" class="button block grey">Gerenciar Professores</button>
+                                    <?php elseif($permission == 4 ): ?>
+                                        <button type="button" class="button block grey">Lançar Notas</button>
+                                    <?php elseif($permission == 5 ): ?>
+                                        <button type="button" class="button block grey">Configurar o Sistema</button>
+                                    <?php elseif($permission == 6 ): ?>
+                                        <button type="button" class="button block grey">Usar Ferramentas</button>
+                                    <?php elseif($permission == 7 ): ?>
+                                        <button type="button" class="button block grey">Emitir Relatórios</button>
+                                    <?php elseif($permission == 8 ): ?>
+                                        <button type="button" class="button block grey">Gerenciar Cursos</button>
+                                    <?php elseif($permission == 9 ): ?>
+                                        <button type="button" class="button block grey">Gerenciar Disciplinas</button>
+                                    <?php endif; ?>
+                                <?php endforeach; ?>
+                            </td>
+                            <td class="center">
+                                <a href="<?php echo $this->url(array('module' => 'administrador', 'controller' => 'usuarios', 'action' => 'editar-grupo', 'id' => $results->id)); ?>" class="tooltip button grey block" data-gravity="s" original-title="Editar Grupo">
+                                    Editar
+                                </a>          
+                                <a href="<?php echo $this->url(array('module' => 'administrador', 'controller' => 'usuarios', 'action' => 'excluir-grupo', 'id' => $results->id)); ?>" class="tooltip button block red" data-gravity="s" original-title="Excluir Grupo">
+                                    Excluir
+                                </a>
+                            </td>
+                        </tr>
+                    <?php endforeach; ?>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>

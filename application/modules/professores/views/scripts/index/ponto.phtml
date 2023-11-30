@@ -1,0 +1,66 @@
+<div class="tag_line">
+    <div class="container">
+        <div class="row">
+            <div class="span12">
+                <div class="welcome">
+                    <h3 class="wel_rig"><span class="colored">Bem-vindo(a)</span><span class="colored">:</span> <?php echo $this->results->name; ?> </h3>
+                    <div class="wel_mag"><div class="bbread"><a class="subpage_block" href="<?php echo $this->url(array('module' => 'professores', 'controller' => 'index', 'action' => 'index')); ?>">Área do Professor</a><div class="subpage_breadcrumbs_dv"></div>Inicio</div></div>
+                    <div class="clearfix"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>	
+
+<div class="main_content_area">
+    <div class="container">
+
+        <?php if ($this->entry == '00:00:00' or is_null($this->entry)): ?>
+        <div class="alert alert-error"<b>Você ainda não marcou seu ponto hoje!</b> <a href="<?php echo $this->url(array('module' => 'professores', 'controller' => 'index', 'action' => 'ponto')); ?>"><b><span class="label label-important">Clique aqui</span></b></a> para marcar sua entrada.</div>
+        <?php elseif ($this->exit == '00:00:00' or is_null($this->exit)): ?>
+        <div class="alert alert-info"<b>Você a sua saida hoje!</b> <a href="<?php echo $this->url(array('module' => 'professores', 'controller' => 'index', 'action' => 'ponto')); ?>"><b><span class="label label-info">Clique aqui</span></b></a> para marcar sua saida.</div>
+        <?php endif; ?>
+        
+        <div class="row">
+            <div class="span3">
+                <ul class="sub-menu-short short_left">
+                    <li class="actives" id="dif"><a href="<?php echo $this->url(array('module' => 'professores', 'controller' => 'index', 'action' => 'index')); ?>">Inicio</a></li>
+                    <li><a href="<?php echo $this->url(array('module' => 'professores', 'controller' => 'index', 'action' => 'dados')); ?>">Meus dados</a></li>
+                    <li><a href="<?php echo $this->url(array('module' => 'professores', 'controller' => 'index', 'action' => 'perguntas')); ?>">Perguntar ao Professor</a></li>
+                    <li><a href="<?php echo $this->url(array('module' => 'professores', 'controller' => 'index', 'action' => 'boletim')); ?>">Lançar Notas e Faltas</a></li> 	
+                    <li><a href="<?php echo $this->url(array('module' => 'professores', 'controller' => 'index', 'action' => 'arquivos')); ?>">Arquivos</a></li>
+                    <li><a href="http://dopdf.softonic.com.br/download#pathbar" target="_blank">Gerador de PDF</a></li>
+                    <li><a href="<?php echo $this->url(array('module' => 'professores', 'controller' => 'index', 'action' => 'sair')); ?>">Sair</a></li>
+                </ul>			
+            </div>
+            <div class="span9">
+                <div class="row-fluid">  
+                    <?php echo $this->flashMessages(); ?>
+                    <br>
+                    <h3 class="title"><span>Marcar Entrada e Saida:</span></h3>
+
+                    <form method="<?php echo $this->form->getMethod(); ?>" action="<?php echo $this->form->getAction(); ?>"  class="grid_12 validate">
+                    <table class="table table-bordered table-striped">
+                        <tbody>
+                            <tr>
+                                <td><span class="badge">Data de Hoje</span></td>
+                                <td><?php echo date('d-m-Y'); ?></td>
+                            </tr>
+                            <tr>
+                                <td><span class="badge badge-important">Hora de Entrada</span></td>
+                                <td><?php echo $this->form->entry; ?></td>
+                            </tr>
+                            <tr>
+                                <td><span class="badge badge-warning">Hora de Saida</span></td>
+                                <td><?php echo $this->form->exit; ?></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <p><?php echo $this->form->send; ?></p>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="divide30"></div>

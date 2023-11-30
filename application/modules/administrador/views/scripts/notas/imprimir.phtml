@@ -1,0 +1,90 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+        <style type="text/css">
+            * {
+                padding: 0;
+                margin: 0;
+            }
+            body {
+                margin-top: 10px;
+            }
+            table {
+                font-family: monospace, sans-serif;
+            }
+            td {
+                padding: 3px;
+            }
+            .texto {
+                padding: 5px;
+                font-size: 11px;
+                font-weight: bold;
+            }
+        </style>
+        <script language="javascript">
+            //<!--
+            function print() {
+                if (!window.print) {
+                    alert("Use o Netscape  ou Internet Explorer \n nas versões 4.0 ou superior!");
+                    return;
+                }
+                window.print();
+            }
+            //-->
+        </script>
+    </head>
+    <body>
+        <div style="width: 750px; margin: 0 auto;">
+        <table width="750" border="0" style="border: 1px solid #c0c0c0;">
+            <tr>
+                <th width="148" scope="row"><img src="<?php echo $this->baseUrl('/static/img/logo_print.png'); ?>" width="148" height="104" alt="CENTEP"></th>
+                <td width="236" align="center"><strong>Mapa de Notas</strong></td>
+                <td width="307" align="center"><input name="Submit2" type="button" class="texto" value="Clique aqui para Imprimir" onclick="javascript:print();"></td>
+            </tr>
+        </table>
+        <table width="750" style="font-size: 12px; margin-top: 2px; border: 1px solid #c0c0c0;">
+            <tr>
+                <td width="250"><strong>ALUNO:</strong>&nbsp;<?php echo $this->student->name; ?></td>
+                <td width="303"><strong>CURSO:</strong>&nbsp;<?php echo $this->student->course_name; ?></td>
+                <td width="161"><strong>MÓDULO:</strong>&nbsp;<?php echo $this->module; ?></td>
+            </tr>
+        </table>
+        <table width="750" border="0" style="font-size: 12px; margin-top: 2px; border: 1px solid #c0c0c0;">
+            <tr bgcolor="#F7F7F7">
+                <td width="200"></td>
+                <td width="40" align="center"><strong>N1</strong></td>
+                <td width="40" align="center"><strong>N2</strong></td>
+                <td width="40" align="center"><strong>FN</strong></td>
+                <td width="40" align="center"><strong>FJ</strong></td>
+                <td width="45" align="center" style="border: 1px solid #c0c0c0;"><strong>NT</strong></td>
+                <td width="40" align="center" style="border: 1px solid #c0c0c0;"><strong>FT</strong></td>
+                <td width="40" align="center"><strong>NR</strong></td>
+                <td width="100" align="center"><strong>Situação</strong></td>
+            </tr>
+        </table>
+        <table width="750" border="0" style="font-size: 12px; margin-top: 2px; border: 1px solid #c0c0c0;">
+            <?php foreach ($this->result as $result): ?>
+                <tr>
+                    <td width="200"><?php echo $result->name; ?></td>
+                    <td width="40" align="center"><?php echo $result->n_1; ?></td>
+                    <td width="40" align="center"><?php echo $result->n_2; ?></td>
+                    <td width="40" align="center"><?php echo $result->f_n; ?></td>
+                    <td width="40" align="center"><?php echo $result->f_j; ?></td>
+                    <td width="45" align="center" style=" border: 1px solid #c0c0c0;"><strong><?php echo $result->n_1+$result->n_2; ?></strong></td>
+                    <td width="40" align="center" style=" border: 1px solid #c0c0c0;"><strong><?php echo $result->f_n+$result->f_j; ?></strong></td>
+                    <td width="40" align="center"><?php echo $result->n_r; ?></td>
+                    <td width="100" align="center"><?php if ($result->situation == 0): ?>Em Andamento<?php elseif ($result->situation == 1): ?>Aprovado<?php elseif ($result->situation == 2): ?>Reprovado<?php endif; ?></td>
+                </tr>
+            <?php endforeach; ?>
+        </table>
+        <table width="750" border="0"  style="margin-top: 2px; border: 1px solid #c0c0c0;">
+            <tr>
+                <td style=" font-size: 11px; padding: 6px;">
+                    <strong>LEGENDA:</strong><br />
+                    <strong>N1</strong> - Nota -   <strong>N2</strong> - Nota     <strong>FN</strong> - Faltas Normal   <strong>- FJ</strong> - Faltas Justificas -  <strong>NT</strong>- Notas Total - <strong>FT</strong> - Faltas Total </td>
+            </tr>
+        </table>
+            </div>
+    </body>
+</html>

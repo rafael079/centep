@@ -1,0 +1,131 @@
+<div class="tag_line">
+    <div class="container">
+        <div class="row">
+            <div class="span12">
+                <div class="welcome">
+                    <h3 class="wel_rig"><span class="colored">Bem-vindo(a)</span><span class="colored">:</span> <?php echo $this->results->name; ?> </h3>
+                    <div class="wel_mag"><div class="bbread"><a class="subpage_block" href="<?php echo $this->url(array('module' => 'professores', 'controller' => 'index', 'action' => 'index')); ?>">Área do Professor</a><div class="subpage_breadcrumbs_dv"></div>Lançar Nota</div></div>
+                    <div class="clearfix"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>	
+
+<div class="main_content_area">
+    <div class="container ">
+        <?php if ($this->entry == '00:00:00' or is_null($this->entry)): ?>
+        <div class="alert alert-error"<b>Você ainda não marcou seu ponto hoje!</b> <a href="<?php echo $this->url(array('module' => 'professores', 'controller' => 'index', 'action' => 'ponto')); ?>"><b><span class="label label-important">Clique aqui</span></b></a> para marcar sua entrada.</div>
+        <?php elseif ($this->exit == '00:00:00' or is_null($this->exit)): ?>
+        <div class="alert alert-info"<b>Você a sua saida hoje!</b> <a href="<?php echo $this->url(array('module' => 'professores', 'controller' => 'index', 'action' => 'ponto')); ?>"><b><span class="label label-info">Clique aqui</span></b></a> para marcar sua saida.</div>
+        <?php endif; ?>
+        <div class="row">
+            <!--            <div class="span3">
+                            <ul class="sub-menu-short short_left">
+                                <li><a href="<?php echo $this->url(array('module' => 'professores', 'controller' => 'index', 'action' => 'index')); ?>">Inicio</a></li>
+                                <li><a href="<?php echo $this->url(array('module' => 'professores', 'controller' => 'index', 'action' => 'dados')); ?>">Meus dados</a></li>
+                                <li><a href="<?php echo $this->url(array('module' => 'professores', 'controller' => 'index', 'action' => 'perguntas')); ?>">Perguntar ao Professor</a></li>
+                                <li class="actives" id="dif"><a href="<?php echo $this->url(array('module' => 'professores', 'controller' => 'index', 'action' => 'boletim')); ?>">Lançar Notas e Faltas</a></li> 	
+                                <li><a href="<?php echo $this->url(array('module' => 'professores', 'controller' => 'index', 'action' => 'arquivos')); ?>">Arquivos</a></li>
+                                <li><a href="http://dopdf.softonic.com.br/download#pathbar" target="_blank">Gerador de PDF</a></li>
+                                <li><a href="<?php echo $this->url(array('module' => 'professores', 'controller' => 'index', 'action' => 'sair')); ?>">Sair</a></li>
+                            </ul>			
+                        </div>-->
+            <div class="span12">
+                <div class="row-fluid">  
+                    <?php echo $this->flashMessages(); ?>
+
+                    <br />
+                    <table class="table table-bordered">
+                        <thead>
+                            <tr>
+                                <th>Aluno selecionado</th>
+                                <th>Curso</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td><?php echo $this->students->name; ?></td>
+                                <td><?php echo $this->students->course_name; ?></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <br />
+
+                    <h3 class="title"><span>Selecione o Módulo:</span></h3>
+                    <div class="bs-docs-example">
+                        
+                        <a href="<?php echo $this->url(array('module' => 'professores', 'controller' => 'index', 'action' => 'lancar', 'modulo' => 1), null, false); ?>" style="text-decoration: none;">  
+                            <span class="label <?php if($this->parm == 1):?> label-success <?php endif; ?>">Módulo 1</span>
+                        </a>
+                        <a href="<?php echo $this->url(array('module' => 'professores', 'controller' => 'index', 'action' => 'lancar', 'modulo' => 2), null, false); ?>" style="text-decoration: none;">  
+                            <span class="label <?php if($this->parm == 2):?> label-success <?php endif; ?>">Módulo 2</span>
+                        </a>
+                        <a href="<?php echo $this->url(array('module' => 'professores', 'controller' => 'index', 'action' => 'lancar', 'modulo' => 3), null, false); ?>" style="text-decoration: none;">  
+                            <span class="label <?php if($this->parm == 3):?> label-success <?php endif; ?>">Módulo 3</span>
+                        </a>
+                        <a href="<?php echo $this->url(array('module' => 'professores', 'controller' => 'index', 'action' => 'lancar', 'modulo' => 4), null, false); ?>" style="text-decoration: none;">  
+                            <span class="label <?php if($this->parm == 4):?> label-success <?php endif; ?>">Módulo 4</span>
+                        </a>
+                        
+                        <br />
+                        <br />
+                        
+                        <table class="table table-striped table-bordered table-condensed">
+                            <thead>
+                                <tr>
+                                    <th>Discliplina</th>
+                                    <th>N1</th>
+                                    <th>N2</th>
+                                    <th>F</th>
+                                    <th>FJ</th>
+                                    <th>NT</th>
+                                    <th>FT</th>
+                                    <th>NR</th>
+                                    <th>Situação</th>
+                                    <th>Lançar</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <?php foreach ($this->resultsModule as $resultsModule): ?>
+                                    <tr>
+                                <form action="" method="POST">
+                                    <td><?php echo $resultsModule->name; ?></td>
+                                    <input type="hidden" name="module" value="1">
+                                    <input type="hidden" name="discipline" value="<?php echo $resultsModule->disciplines_id; ?>">
+                                    <td class="center">
+                                        <input type="text" name="n_1" value="<?php echo $resultsModule->n_1; ?>" style="width: 40px; text-align: center">
+                                    </td>
+                                    <td class="center">
+                                        <input type="text" name="n_2" value="<?php echo $resultsModule->n_2; ?>" style="width: 40px; text-align: center">
+                                    </td>
+                                    <td class="center">
+                                        <input type="text" name="f" value="<?php echo $resultsModule->f_n; ?>" style="width: 40px; text-align: center">
+                                    </td>
+                                    <td class="center">
+                                        <input type="text"name="f_j" value="<?php echo $resultsModule->f_j; ?>" style="width: 40px; text-align: center">
+                                    </td>
+                                    <td class="center"><?php echo $resultsModule->n_1 + $resultsModule->n_2; ?></td>
+                                    <td class="center"><?php echo $resultsModule->f_n + $resultsModule->f_j; ?></td>
+                                    <td class="center">
+                                        <input type="text" name="n_r" value="<?php echo $resultsModule->n_r; ?>" style="width: 40px; text-align: center">
+                                    </td>
+                                    <td>
+                                        <?php if ($resultsModule->situation == 0): ?>Em Andamento<?php endif; ?>
+                                        <?php if ($resultsModule->situation == 1): ?>Aprovado<?php endif; ?>
+                                        <?php if ($resultsModule->situation == 2): ?>Reprovado<?php endif; ?>
+                                        </select>
+                                    </td>
+                                    <td><button type="submit" class="btn btn-mini btn-danger">Lançar</button></td>
+                                </form>
+                                </tr>
+                            <?php endforeach; ?>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="divide30"></div>

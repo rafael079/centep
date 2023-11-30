@@ -1,0 +1,69 @@
+<?php echo $this->headTitle()->prepend('Cadastrar as Disciplinas do Aluno'); ?>
+<h1 class="grid_12 margin-top no-margin-top-phone">Cadastrar as Disciplinas do Aluno</h1>
+
+<div class="grid_12">
+    <?php echo $this->flashMessages(); ?>
+</div>
+
+<div class="grid_12">
+    <div class="box-note">
+        <p><b>Nome do Aluno:</b> <?php echo $this->result->name; ?>.</p>
+        <p><b>Curso Escolhido:</b> <?php echo $this->result->course; ?>.</p>
+    </div>
+</div>
+
+<form method="<?php echo $this->form->getMethod(); ?>" action="<?php echo $this->form->getAction(); ?>" class="grid_12 validate">
+    <fieldset>
+        <legend>Cadastrar Disciplina - 1º MODULO</legend>
+        <div class="row">
+            <label for="disciplines_1">
+                <strong>Selecione as Disciplinas</strong>
+                <small>Informe o disciplinas do aluno</small>
+            </label>
+            <div>
+                <?php echo $this->form->disciplines_1; ?>
+            </div>
+        </div>
+    </fieldset>
+    <fieldset>
+        <legend>Cadastrar Disciplina - 2º MODULO</legend>
+        <div class="row">
+            <label for="disciplines_2">
+                <strong>Selecione as Disciplinas</strong>
+                <small>Informe o disciplinas do aluno</small>
+            </label>
+            <div>
+                <?php echo $this->form->disciplines_2; ?>
+            </div>
+        </div>
+    </fieldset>
+    <fieldset>
+        <legend>Cadastrar Disciplina - 3º MODULO</legend>
+        <div class="row">
+            <label for="disciplines_3">
+                <strong>Selecione as Disciplinas</strong>
+                <small>Informe o disciplinas do aluno</small>
+            </label>
+            <div>
+                <?php echo $this->form->disciplines_3; ?>
+            </div>
+        </div>
+    </fieldset>
+    <fieldset>
+        <legend>Cadastrar Disciplina - 4º MODULO</legend>
+        <div class="row">
+            <label for="disciplines_4">
+                <strong>Selecione as Disciplinas</strong>
+                <small>Informe o disciplinas do aluno</small>
+            </label>
+            <div>
+                <?php echo $this->form->disciplines_4; ?>
+            </div>
+        </div>
+    </fieldset>
+    <div class="actions">
+        <div class="left">
+            <?php echo $this->form->send; ?>
+        </div>
+    </div>
+</form>

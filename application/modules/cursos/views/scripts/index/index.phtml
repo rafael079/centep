@@ -1,0 +1,61 @@
+<?php echo $this->headTitle()->prepend('Cursos Técnicos'); ?>
+<div class="tag_line">
+    <div class="container">
+        <div class="row">
+            <div class="span12">
+                <div class="welcome">
+                    <h3 class="wel_rig"><span class="colored">Cursos Oferecidos</span></h3>
+                    <div class="wel_mag"><div class="bbread"><a class="subpage_block" href="<?php echo $this->url(array('module' => 'default', 'controller' => 'index', 'action' => 'index')); ?>">Inicio</a><div class="subpage_breadcrumbs_dv"></div>Cursos</div></div>
+                    <div class="clearfix"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div><!-- /tag_line -->
+
+
+<div class="main_content_area">
+    <div class="container">
+        <div class="row">
+
+            <div class="span3 ">
+                <h3 class="title marg_serch"><span>Lista de Cursos</span></h3>
+                <ul class="categories">
+                    <?php foreach ($this->results as $results): ?>
+                        <li><a href="<?php echo $this->url(array('module' => 'cursos', 'controller' => 'sobre', 'action' => 'index', 'curso' => $results->id)); ?>"><?php echo ucwords(strtolower($results->name)); ?></a></li>
+                    <?php endforeach; ?>
+                </ul>
+            </div>
+
+            <div class="span9">
+                <div class="marg20">
+                    <?php echo $this->flashMessages(); ?>
+                    <?php foreach ($this->results as $results): ?>
+                    <div class="post medium">
+                        <div class="medium-image">
+                            <div class="post-img picture">
+                                <img src="<?php echo $this->baseUrl('/static/img/imng.jpg'); ?>" title="<?php echo ucwords(strtolower($results->name)); ?>" />
+                            </div>
+                        </div>
+                        <div class="date date_med" >
+                            <span class="day med_day"><?php echo ($results->workload/24); ?></span>
+                            <span class="month"><small>Dias</small></span>
+                        </div>
+                        <div class="medium-content">
+                            <div class="meta short_left">
+                                <h2><a href="<?php echo $this->url(array('module' => 'cursos', 'controller' => 'sobre', 'action' => 'index', 'curso' => $results->id)); ?>"><?php echo ucwords(strtolower($results->name)); ?></a></h2>
+                                <span><i class="icon-adjust"></i> Carga Horária: <?php echo $results->workload; ?> Horas</span>
+                                <span><i class="icon-tags"></i> Valor: R$ <?php echo $results->value; ?></span>
+                            </div>
+                            <p><?php echo $this->truncate($results->description, 0, 250); ?></p>
+                            <p  class="read"><a href="<?php echo $this->url(array('module' => 'cursos', 'controller' => 'sobre', 'action' => 'index', 'curso' => $results->id)); ?>">Siba mais →</a></p>
+                        </div>
+                    </div>
+                     <?php endforeach; ?>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</div>
+

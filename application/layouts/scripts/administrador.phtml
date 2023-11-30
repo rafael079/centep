@@ -1,0 +1,295 @@
+<?php echo $this->doctype(); ?>
+<html>
+    <head>
+        <?php echo $this->headMeta(); ?>
+        <?php echo $this->headTitle(); ?>
+        
+        <link rel="dns-prefetch" href="http://fonts.googleapis.com" />
+	<link rel="dns-prefetch" href="http://themes.googleusercontent.com" />
+	
+	<link rel="dns-prefetch" href="http://ajax.googleapis.com" />
+	<link rel="dns-prefetch" href="http://cdnjs.cloudflare.com" />
+	<link rel="dns-prefetch" href="http://agorbatchev.typepad.com" />
+        
+        <link rel="stylesheet" href="<?php echo $this->baseUrl('/static/css/adm/style.css'); ?>">
+	<link rel="stylesheet" href="<?php echo $this->baseUrl('/static/css/adm/grid.css'); ?>">
+	<link rel="stylesheet" href="<?php echo $this->baseUrl('/static/css/adm/layout.css'); ?>">
+
+	<link rel="stylesheet" href="<?php echo $this->baseUrl('/static/css/adm/icons.css'); ?>">
+	<link rel="stylesheet" href="<?php echo $this->baseUrl('/static/css/adm/fonts/font-awesome.css'); ?>">
+	<!--[if IE 8]><link rel="stylesheet" href="<?php echo $this->baseUrl('/static/css/adm/fonts/font-awesome-ie7.css'); ?>"><![endif]-->
+        
+        <link rel="stylesheet" href="<?php echo $this->baseUrl('/static/css/adm/external/jquery-ui-1.8.21.custom.css'); ?>">
+	<link rel="stylesheet" href="<?php echo $this->baseUrl('/static/css/adm/external/jquery.chosen.css'); ?>">
+	<link rel="stylesheet" href="<?php echo $this->baseUrl('/static/css/adm/external/jquery.cleditor.css'); ?>">
+	<link rel="stylesheet" href="<?php echo $this->baseUrl('/static/css/adm/external/jquery.colorpicker.css'); ?>">
+	<link rel="stylesheet" href="<?php echo $this->baseUrl('/static/css/adm/external/jquery.elfinder.css'); ?>">
+	<link rel="stylesheet" href="<?php echo $this->baseUrl('/static/css/adm/external/jquery.fancybox.css'); ?>">
+	<link rel="stylesheet" href="<?php echo $this->baseUrl('/static/css/adm/external/jquery.jgrowl.css'); ?>">
+	<link rel="stylesheet" href="<?php echo $this->baseUrl('/static/css/adm/external/jquery.plupload.queue.css'); ?>">
+	<link rel="stylesheet" href="<?php echo $this->baseUrl('/static/css/adm/external/syntaxhighlighter/shCore.css'); ?>" />
+	<link rel="stylesheet" href="<?php echo $this->baseUrl('/static/css/adm/external/syntaxhighlighter/shThemeDefault.css'); ?>" />
+        
+	<link rel="stylesheet" href="<?php echo $this->baseUrl('/static/css/adm/elements.css'); ?>">
+	<link rel="stylesheet" href="<?php echo $this->baseUrl('/static/css/adm/forms.css'); ?>">
+	<link rel="stylesheet" href="<?php echo $this->baseUrl('/static/css/adm/typographics.css'); ?>">
+	<link rel="stylesheet" href="<?php echo $this->baseUrl('/static/css/adm/media-queries.css'); ?>">
+	<link rel="stylesheet" href="<?php echo $this->baseUrl('/static/css/adm/ie-fixes.css'); ?>">
+        <?php echo $this->headLink(); ?>
+        
+        <script type="text/javascript">
+            window.WebFontConfig = {
+                    google: { families: [ 'PT Sans:400,700' ] },
+                    active: function(){ $(window).trigger('fontsloaded'); }
+            };
+        </script>
+        <script defer async src="https://ajax.googleapis.com/ajax/libs/webfont/1.0.28/webfont.js"></script>
+        <script src="<?php echo $this->baseUrl('/static/js/adm/mylibs/polyfills/modernizr-2.6.1.min.js'); ?>"></script>
+	<script src="<?php echo $this->baseUrl('/static/js/adm/mylibs/polyfills/respond.js'); ?>"></script>
+	<script src="<?php echo $this->baseUrl('/static/js/adm/mylibs/polyfills/matchmedia.js'); ?>"></script>
+	<!--[if lt IE 9]><script src="<?php echo $this->baseUrl('/static/js/adm/mylibs/polyfills/selectivizr.js'); ?>"></script><![endif]-->
+	<!--[if lt IE 10]><script src="<?php echo $this->baseUrl('/static/js/adm/mylibs/polyfills/excanvas.js'); ?>"></script><![endif]-->
+	<!--[if lt IE 10]><script src="<?php echo $this->baseUrl('/static/js/adm/mylibs/polyfills/classlist.js'); ?>"></script><![endif]-->
+        <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.js"></script>
+	<script>window.jQuery || document.write('<script src="<?php echo $this->baseUrl('/static/js/adm/libs/jquery-1.7.2.js'); ?>"><\/script>');</script>
+
+	<script src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.8.21/jquery-ui.js"></script>
+	<script>window.jQuery.ui || document.write('<script src="<?php echo $this->baseUrl('/static/js/adm/libs/jquery-ui-1.8.21.js'); ?>"><\/script>');</script>
+	
+	<!--[if gt IE 8]><!-->
+	<script src="http://cdnjs.cloudflare.com/ajax/libs/lodash.js/0.4.2/lodash.js"></script>
+	<script>window._ || document.write('<script src="<?php echo $this->baseUrl('/static/js/adm/libs/lo-dash.js'); ?>"><\/script>');</script>
+	<!--<![endif]-->
+	<!-- IE8 doesn't like lodash -->
+	<!--[if lt IE 9]><script src="http://documentcloud.github.com/underscore/underscore.js"></script><![endif]-->
+        
+	<script src="<?php echo $this->baseUrl('/static/js/adm/mylibs/jquery.hashchange.js'); ?>"></script>
+	<script src="<?php echo $this->baseUrl('/static/js/adm/mylibs/jquery.idle-timer.js'); ?>"></script>
+	<script src="<?php echo $this->baseUrl('/static/js/adm/mylibs/jquery.plusplus.js'); ?>"></script>
+	<script src="<?php echo $this->baseUrl('/static/js/adm/mylibs/jquery.jgrowl.js'); ?>"></script>
+	<script src="<?php echo $this->baseUrl('/static/js/adm/mylibs/jquery.scrollTo.js'); ?>"></script>
+	<script src="<?php echo $this->baseUrl('/static/js/adm/mylibs/jquery.ui.touch-punch.js'); ?>"></script>
+	<script src="<?php echo $this->baseUrl('/static/js/adm/mylibs/jquery.ui.multiaccordion.js'); ?>"></script>
+	<script src="<?php echo $this->baseUrl('/static/js/adm/mylibs/number-functions.js'); ?>"></script>
+
+	<script src="<?php echo $this->baseUrl('/static/js/adm/mylibs/forms/jquery.autosize.js'); ?>"></script>
+	<script src="<?php echo $this->baseUrl('/static/js/adm/mylibs/forms/jquery.checkbox.js'); ?>"></script>
+	<script src="<?php echo $this->baseUrl('/static/js/adm/mylibs/forms/jquery.chosen.js'); ?>"></script>
+	<script src="<?php echo $this->baseUrl('/static/js/adm/mylibs/forms/jquery.cleditor.js'); ?>"></script>
+	<script src="<?php echo $this->baseUrl('/static/js/adm/mylibs/forms/jquery.colorpicker.js'); ?>"></script>
+	<script src="<?php echo $this->baseUrl('/static/js/adm/mylibs/forms/jquery.ellipsis.js'); ?>"></script>
+	<script src="<?php echo $this->baseUrl('/static/js/adm/mylibs/forms/jquery.fileinput.js'); ?>"></script>
+	<script src="<?php echo $this->baseUrl('/static/js/adm/mylibs/forms/jquery.fullcalendar.js'); ?>"></script>
+	<script src="<?php echo $this->baseUrl('/static/js/adm/mylibs/forms/jquery.maskedinput.js'); ?>"></script>
+	<script src="<?php echo $this->baseUrl('/static/js/adm/mylibs/forms/jquery.mousewheel.js'); ?>"></script>
+	<script src="<?php echo $this->baseUrl('/static/js/adm/mylibs/forms/jquery.placeholder.js'); ?>"></script>
+	<script src="<?php echo $this->baseUrl('/static/js/adm/mylibs/forms/jquery.pwdmeter.js'); ?>"></script>
+	<script src="<?php echo $this->baseUrl('/static/js/adm/mylibs/forms/jquery.ui.datetimepicker.js'); ?>"></script>
+	<script src="<?php echo $this->baseUrl('/static/js/adm/mylibs/forms/jquery.ui.spinner.js'); ?>"></script>
+	<script src="<?php echo $this->baseUrl('/static/js/adm/mylibs/forms/jquery.validate.js'); ?>"></script>
+	<script src="<?php echo $this->baseUrl('/static/js/adm/mylibs/forms/uploader/plupload.js'); ?>"></script>
+	<script src="<?php echo $this->baseUrl('/static/js/adm/mylibs/forms/uploader/plupload.html5.js'); ?>"></script>
+	<script src="<?php echo $this->baseUrl('/static/js/adm/mylibs/forms/uploader/plupload.html4.js'); ?>"></script>
+	<script src="<?php echo $this->baseUrl('/static/js/adm/mylibs/forms/uploader/plupload.flash.js'); ?>"></script>
+	<script src="<?php echo $this->baseUrl('/static/js/adm/mylibs/forms/uploader/jquery.plupload.queue/jquery.plupload.queue.js'); ?>"></script>
+	<script src="<?php echo $this->baseUrl('/static/js/adm/mylibs/charts/jquery.flot.js'); ?>"></script>
+	<script src="<?php echo $this->baseUrl('/static/js/adm/mylibs/charts/jquery.flot.orderBars.js'); ?>"></script>
+	<script src="<?php echo $this->baseUrl('/static/js/adm/mylibs/charts/jquery.flot.pie.js'); ?>"></script>
+	<script src="<?php echo $this->baseUrl('/static/js/adm/mylibs/charts/jquery.flot.resize.js'); ?>"></script>
+	<script src="<?php echo $this->baseUrl('/static/js/adm/mylibs/explorer/jquery.elfinder.js'); ?>"></script>
+	<script src="<?php echo $this->baseUrl('/static/js/adm/mylibs/fullstats/jquery.css-transform.js'); ?>"></script>
+	<script src="<?php echo $this->baseUrl('/static/js/adm/mylibs/fullstats/jquery.animate-css-rotate-scale.js'); ?>"></script>
+	<script src="<?php echo $this->baseUrl('/static/js/adm/mylibs/fullstats/jquery.sparkline.js'); ?>"></script>
+	<script src="<?php echo $this->baseUrl('/static/js/adm/mylibs/syntaxhighlighter/shCore.js'); ?>"></script>
+	<script src="<?php echo $this->baseUrl('/static/js/adm/mylibs/syntaxhighlighter/shAutoloader.js'); ?>"></script>
+	<script src="<?php echo $this->baseUrl('/static/js/adm/mylibs/dynamic-tables/jquery.dataTables.js'); ?>"></script>
+	<script src="<?php echo $this->baseUrl('/static/js/adm/mylibs/dynamic-tables/jquery.dataTables.tableTools.zeroClipboard.js'); ?>"></script>
+	<script src="<?php echo $this->baseUrl('/static/js/adm/mylibs/dynamic-tables/jquery.dataTables.tableTools.js'); ?>"></script>
+	<script src="<?php echo $this->baseUrl('/static/js/adm/mylibs/gallery/jquery.fancybox.js'); ?>"></script>
+	<script src="<?php echo $this->baseUrl('/static/js/adm/mylibs/tooltips/jquery.tipsy.js'); ?>"></script>
+        <script src="<?php echo $this->baseUrl('/static/js/tiny_mce/jquery.tinymce.js'); ?>"></script>
+        <script src="<?php echo $this->baseUrl('/static/js/adm/mango.js'); ?>"></script>
+	<script src="<?php echo $this->baseUrl('/static/js/adm/plugins.js'); ?>"></script>
+	<script src="<?php echo $this->baseUrl('/static/js/adm/script.js'); ?>"></script>
+        <?php echo $this->headScript(); ?>
+        
+    </head>
+    <body>
+        <section id="toolbar">
+            <div class="container_12">
+                <div class="left">
+                    <ul class="breadcrumb">
+                        <li><a href="<?php echo $this->url(array('module' => 'administrador', 'controller' => 'index', 'action' => 'index')); ?>">Inicio</a></li>
+                    </ul>
+                </div><!-- /left -->
+                <div class="right">
+                    <ul>
+<!--                        <li><a href="<?php echo $this->url(array('module' => 'administrador', 'controller' => 'usuarios', 'action' => 'perfil')); ?>"><span class="icon i14_admin-user"></span>Sua Conta</a></li>-->
+                        <li class="red"><a href="<?php echo $this->url(array('module' => 'administrador', 'controller' => 'login', 'action' => 'sair')); ?>">Sair</a></li>
+                    </ul>
+                </div><!-- /right -->
+            </div><!-- /container_12 -->
+        </section><!-- /toolbar -->
+        <header class="container_12">
+            <a href="<?php echo $this->url(array('module' => 'administrador', 'controller' => 'index', 'action' => 'index')); ?>"><img src="<?php echo $this->baseUrl('/static/img/adm/logo.png'); ?>" alt="CENTEP" width="191" height="60"></a>
+            <div class="buttons">
+                <a href="<?php echo $this->url(array('module' => 'administrador', 'controller' => 'professores', 'action' => 'index')); ?>">
+                    <span class="icon icon-briefcase"></span>
+                    Professores
+                </a>
+                <a href="<?php echo $this->url(array('module' => 'administrador', 'controller' => 'alunos', 'action' => 'index')); ?>">
+                    <span class="icon icon-user"></span>
+                    Alunos
+                </a>
+                <a href="<?php echo $this->url(array('module' => 'administrador', 'controller' => 'configuracoes', 'action' => 'index')); ?>">
+                    <span class="icon icon-cogs"></span>
+                    Configurações
+                </a>
+            </div>
+        </header><!-- /container_12 -->
+        <div role="main" id="main" class="container_12 clearfix">
+            <section class="toolbar">
+                <div class="user">
+                    <div class="avatar">
+                        <img src="<?php echo $this->baseUrl('/static/img/adm/layout/content/toolbar/user/avatar.png'); ?>">
+<!--                        <span>3</span>-->
+                    </div><!-- /avatar -->
+                    <span><?php echo $this->user->name;?></span>
+                    <ul>
+                        <li><a href="<?php echo $this->url(array('module' => 'administrador', 'controller' => 'configuracoes', 'action' => 'index')); ?>">Configurações</a></li>
+<!--                        <li><a href="<?php echo $this->url(array('module' => 'administrador', 'controller' => 'usuarios', 'action' => 'perfil')); ?>">Sua Conta</a></li>-->
+                        <li class="line"></li>
+                        <li><a href="<?php echo $this->url(array('module' => 'administrador', 'controller' => 'login', 'action' => 'sair')); ?>">Sair</a></li>
+                    </ul>
+                </div><!-- /user -->
+                <ul class="shortcuts">
+                    <li>
+<!--                        <a href="javascript:void(0);" class="tooltip" original-title="Criador rápido de usuários"><span class="icon i24_user-business"></span></a>-->
+                        <!-- Possible sizes: small/medium/large -->
+                        <div class="small">
+                            <h3>Criar Usuário</h3>
+
+                            <!-- Button bar -->
+                            <button class="button flat left grey" onclick="$(this).parent().fadeToggle($$.config.fxSpeed).parent().removeClass('active')">Fechar</button>
+                            <button class="button flat right" onclick="$(this).parent().fadeToggle($$.config.fxSpeed).parent().removeClass('active')">Criar</button>
+
+                            <div class="content">
+                                <form class="full grid">
+                                    <div class="row no-bg">
+                                        <p class="_100 small">
+                                            <label for="p1_username">Nome:</label>
+                                            <input type="text" name=p1_username id=p1_username />
+                                        </p>
+                                    </div>
+                                    <div class="row no-bg">
+                                        <p class="_100 small">
+                                            <label for="p1_username">Username</label>
+                                            <input type="text" name=p1_username id=p1_username />
+                                        </p>
+                                    </div>
+                                    <div class="row no-bg">
+                                        <p class="_100 small">
+                                            <label for="p1_username">Senha</label>
+                                            <input type="password" name=p1_username id=p1_username />
+                                        </p>
+                                    </div>
+                                </form>
+                            </div>
+                        </div><!-- End of popup -->
+                    </li>
+                </ul><!-- /shortcuts -->
+<!--                <input type="search" data-source="extras/search.php" placeholder="Buscar..." autocomplete="off" class="tooltip" title="e.g. Peach" data-gravity=s>-->
+            </section><!-- /toolbar -->
+            
+            <aside>
+                <div class="top">
+                    <nav>
+                        <ul class="collapsible accordion">
+                            <li>
+                                <a href="<?php echo $this->url(array('module' => 'administrador', 'controller' => 'index', 'action' => 'index')); ?>">
+                                    <img src="<?php echo $this->baseUrl('/static/img/adm/icons/packs/fugue/16x16/dashboard.png'); ?>" alt="" height="16" width="16">Página Inicial
+                                </a>
+                            </li>
+                            <li>
+                                <a href="javascript:void(0);"><img src="<?php echo $this->baseUrl('/static/img/adm/icons/packs/fugue/16x16/user-business-boss.png'); ?>" alt="" height="16" width="16">Usuários</a>
+                                <ul>
+                                    <li><a href="<?php echo $this->url(array('module' => 'administrador', 'controller' => 'usuarios', 'action' => 'index')); ?>"><span class="icon icon-list"></span>Listar Todos</a></li>
+                                    <li><a href="<?php echo $this->url(array('module' => 'administrador', 'controller' => 'usuarios', 'action' => 'grupos')); ?>"><span class="icon icon-lock"></span>Grupos e Permissões</a></li>
+                                    <li><a href="<?php echo $this->url(array('module' => 'administrador', 'controller' => 'usuarios', 'action' => 'adicionar')); ?>"><span class="icon icon-plus-sign"></span>Adicionar Novo</a></li>
+                                </ul>
+                            </li>
+                            <li>
+                                <a href="javascript:void(0);"><img src="<?php echo $this->baseUrl('/static/img/adm/icons/packs/fugue/16x16/user.png'); ?>" alt="" height=16 width=16>Alunos</a>
+                                <ul>
+                                    <li><a href="<?php echo $this->url(array('module' => 'administrador', 'controller' => 'alunos', 'action' => 'index')); ?>"><span class="icon icon-list"></span>Listar Todos</a></li>
+                                    <li><a href="<?php echo $this->url(array('module' => 'administrador', 'controller' => 'alunos', 'action' => 'adicionar')); ?>"><span class="icon icon-plus-sign"></span>Adicionar</a></li>
+                                </ul>
+                            </li>
+                            <li>
+                                <a href="javascript:void(0);"><img src="<?php echo $this->baseUrl('/static/img/adm/icons/packs/fugue/16x16/user-worker-boss.png'); ?>" alt="" height=16 width=16>Professores</a>
+                                <ul>
+                                    <li><a href="<?php echo $this->url(array('module' => 'administrador', 'controller' => 'professores', 'action' => 'index')); ?>"><span class="icon icon-list"></span>Listar Todos</a></li>
+                                    <li><a href="<?php echo $this->url(array('module' => 'administrador', 'controller' => 'professores', 'action' => 'adicionar')); ?>"><span class="icon icon-plus-sign"></span>Adicionar</a></li>
+                                </ul>
+                            </li>
+                            <li>
+                                <a href="javascript:void(0);"><img src="<?php echo $this->baseUrl('/static/img/adm/icons/packs/fugue/16x16/flask.png'); ?>" alt="" height=16 width=16>Cursos</a>
+                                <ul>
+                                    <li><a href="<?php echo $this->url(array('module' => 'administrador', 'controller' => 'cursos', 'action' => 'index')); ?>"><span class="icon icon-list"></span>Listar Todos</a></li>
+                                    <li><a href="<?php echo $this->url(array('module' => 'administrador', 'controller' => 'cursos', 'action' => 'adicionar')); ?>"><span class="icon icon-plus-sign"></span>Adicionar</a></li>
+                                </ul>
+                            </li>
+                            <li>
+                                <a href="javascript:void(0);"><img src="<?php echo $this->baseUrl('/static/img/adm/icons/packs/fugue/16x16/node-select.png'); ?>" alt="" height=16 width=16>Disciplinas</a>
+                                <ul>
+                                    <li><a href="<?php echo $this->url(array('module' => 'administrador', 'controller' => 'disciplinas', 'action' => 'index')); ?>"><span class="icon icon-list"></span>Listar Todos</a></li>
+                                    <li><a href="<?php echo $this->url(array('module' => 'administrador', 'controller' => 'disciplinas', 'action' => 'adicionar')); ?>"><span class="icon icon-plus-sign"></span>Adicionar</a></li>
+                                </ul>
+                            </li>
+                            <li>
+                                <a href="javascript:void(0);"><img src="<?php echo $this->baseUrl('/static/img/adm/icons/packs/fugue/16x16/notebook-sticky-note.png'); ?>" alt="" height=16 width=16>Boletins e Notas</a>
+                                <ul>
+                                    <li><a href="<?php echo $this->url(array('module' => 'administrador', 'controller' => 'notas', 'action' => 'lancar')); ?>"><span class="icon icon-plus-sign"></span>Lançar Nota</a></li>
+                                </ul>
+                            </li>
+                            <li>
+                                <a href="javascript:void(0);"><img src="<?php echo $this->baseUrl('/static/img/adm/icons/packs/fugue/16x16/users.png'); ?>" alt="" height=16 width=16>Turmas</a>
+                                <ul>
+                                    <li><a href="<?php echo $this->url(array('module' => 'administrador', 'controller' => 'turmas', 'action' => 'index')); ?>"><span class="icon icon-list"></span>Listar Todas</a></li>
+                                    <li><a href="<?php echo $this->url(array('module' => 'administrador', 'controller' => 'turmas', 'action' => 'nova')); ?>"><span class="icon icon-plus-sign"></span>Criar Nova</a></li>
+                                </ul>
+                            </li>
+                            <li>
+                                <a href="javascript:void(0);"><img src="<?php echo $this->baseUrl('/static/img/adm/icons/packs/fugue/16x16/chart.png'); ?>" alt="" height=16 width=16>Relatórios</a>
+                                <ul>
+                                    <li><a href="<?php echo $this->url(array('module' => 'administrador', 'controller' => 'relatorios', 'action' => 'diario')); ?>">Diário de Classe</a></li>
+                                    <li><a href="<?php echo $this->url(array('module' => 'administrador', 'controller' => 'relatorios', 'action' => 'certificado')); ?>">Certificado de Conclusão</a></li>
+                                    <li><a href="<?php echo $this->url(array('module' => 'administrador', 'controller' => 'relatorios', 'action' => 'aprovados')); ?>">Lista de Aprovados</a></li>
+                                </ul>
+                            </li>
+                            <li>
+                                <a href="javascript:void(0);"><img src="<?php echo $this->baseUrl('/static/img/adm/icons/packs/fugue/16x16/toolbox.png'); ?>" alt="" height=16 width=16>Ferramentas</a>
+                                <ul>
+                                    <li><a href="<?php echo $this->url(array('module' => 'administrador', 'controller' => 'ferramentas', 'action' => 'conteudo')); ?>"><span class="icon icon-edit"></span>Conteudo</a></li>
+                                    <li><a href="<?php echo $this->url(array('module' => 'administrador', 'controller' => 'ferramentas', 'action' => 'emails')); ?>"><span class="icon icon-envelope"></span>Envio de E-mails</a></li>
+                                    <li><a href="<?php echo $this->url(array('module' => 'administrador', 'controller' => 'ferramentas', 'action' => 'boletos')); ?>"><span class="icon icon-money"></span>Gerar Boleto</a></li>
+                                </ul>
+                            </li>
+                            <li>
+                                <a href="<?php echo $this->url(array('module' => 'administrador', 'controller' => 'configuracoes', 'action' => 'index')); ?>">
+                                    <img src="<?php echo $this->baseUrl('/static/img/adm/icons/packs/fugue/16x16/gear.png'); ?>" alt="" height="16" width="16">Configurações do Site
+                                </a>
+                            </li>
+                        </ul>
+                    </nav>
+                </div>
+            </aside>
+            
+            <section id="content" class="container_12 clearfix" data-sort="true">
+                <?php echo $this->layout()->content; ?>
+            </section><!-- /container_12 -->
+            
+        </div><!-- /container_12 -->
+        <script>$$.loaded();</script>
+    </body>
+</html>

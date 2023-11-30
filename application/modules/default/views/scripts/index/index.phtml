@@ -1,0 +1,205 @@
+<?php echo $this->headTitle()->append('Centro Tecnológico e Formação Profissional'); ?>
+
+<div class="container">
+    <div class="row">
+        <div class="span12">
+            <div class="welcome">					
+                <div class="wel_cen"><h3>Cursos técnicos ao seu alcance.</h3></div>
+                <div class="wel_cenm"><h3>Invista em você mesmo, no seu futuro e na sua família.</h3></div>					
+            </div>
+        </div>
+    </div>
+</div>
+
+<div id="rev_slider_1_1_wrapper" class="rev_slider_wrapper fullwidthbanner-container fullcolor">
+    <div id="rev_slider_1_1" class="rev_slider fullwidthabanner cont slider_block">						
+        <ul>
+            <li data-transition="random" data-slotamount="7" data-masterspeed="500" ><img src="<?php echo$this->baseUrl('/static/img/re_1.png'); ?>" alt="slide" data-fullwidthcentering="true">														
+                <div class="tp-caption gw_large_text sfr"  
+                     data-x="10" 
+                     data-y="70" 
+                     data-speed="1000" 
+                     data-start="800" 
+                     data-easing="easeInOutBack"  >Invista em sua<br> vida profissional</div>
+
+                <div class="tp-caption gw_medium_green sfr"  
+                     data-x="11" 
+                     data-y="170" 
+                     data-speed="1000" 
+                     data-start="1200" 
+                     data-easing="easeInOutBack"  >Faça um curso técnico na CENTEP</div>
+
+                <div class="tp-caption gw_black sfr"  
+                     data-x="12" 
+                     data-y="215" 
+                     data-speed="1000" 
+                     data-start="1400" 
+                     data-easing="easeInOutBack"  >Escolha já, um de nossos cursos técnicos e matricule-se.<br>São diversos curso a sua disposição.</div>
+
+                <div class="tp-caption gw_black lfb"  
+                     data-x="12" 
+                     data-y="273" 
+                     data-speed="1000" 
+                     data-start="1600" 
+                     data-easing="easeInOutBack"  ><a href="<?php echo $this->url(array('module' => 'cursos', 'controller' => 'index', 'action' => 'index')); ?>" class="tp-button grey small">Matricule-se já!</a></div> 
+
+                <div class="tp-caption sfb"  
+                     data-x="600" 
+                     data-y="" 
+                     data-speed="1000" 
+                     data-start="1000" 
+                     data-easing="easeInOutBack"  ><img src="<?php echo$this->baseUrl('/static/img/man.png'); ?>" alt="Invista no seu futuro!"></div>
+            </li>  					 	
+        </ul>
+        <div class="tp-bannertimer tp-bottom"></div>			
+    </div>
+</div>		
+
+
+<script type="text/javascript">
+    var tpj = jQuery;
+
+
+    var revapi1;
+
+    tpj(document).ready(function() {
+
+        if (tpj.fn.cssOriginal != undefined)
+            tpj.fn.css = tpj.fn.cssOriginal;
+
+        if (tpj('#rev_slider_1_1').revolution == undefined)
+            revslider_showDoubleJqueryError('#rev_slider_1_1');
+        else
+            revapi1 = tpj('#rev_slider_1_1').show().revolution(
+                    {
+                        delay: 9000,
+                        startwidth: 960,
+                        startheight: 400,
+                        hideThumbs: 200,
+                        thumbWidth: 100,
+                        thumbHeight: 50,
+                        thumbAmount: 3,
+                        navigationType: "none",
+                        navigationArrows: "solo",
+                        navigationStyle: "navbar-old",
+                        touchenabled: "on",
+                        onHoverStop: "on",
+                        navigationHAlign: "center",
+                        navigationVAlign: "bottom",
+                        navigationHOffset: 0,
+                        navigationVOffset: 20,
+                        soloArrowLeftHalign: "left",
+                        soloArrowLeftValign: "center",
+                        soloArrowLeftHOffset: 20,
+                        soloArrowLeftVOffset: 0,
+                        soloArrowRightHalign: "right",
+                        soloArrowRightValign: "center",
+                        soloArrowRightHOffset: 20,
+                        soloArrowRightVOffset: 0,
+                        shadow: 0,
+                        fullWidth: "off",
+                        stopLoop: "off",
+                        stopAfterLoops: -1,
+                        stopAtSlide: -1,
+                        shuffle: "off",
+                        hideSliderAtLimit: 0,
+                        hideCaptionAtLimit: 0,
+                        hideAllCaptionAtLilmit: 0,
+                        startWithSlide: 0
+                    });
+
+    });
+</script>
+
+<div class="container">
+    <div class="row">
+        <div class="span4 portfolio">
+            <div class="bs-docs-example servis marg20">
+                <div class="accordion" id="accordion2">
+                    <div class="accordion-group">
+                        <div class="accordion-heading">
+                            <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion2" href="#collapseOne">Acesso de Alunos</a>
+                        </div>
+                        <div id="collapseOne" class="accordion-body collapse">
+                            <div class="accordion-inner">
+                                <form action="<?php echo $this->url(array('module' => 'login', 'controller' => 'index', 'action' => 'alunos')); ?>" method="post" id="contactForm">
+                            <p class="about_text input marg">Seu Username:<br><input type="text" name="username" value="" class="contact" style="width: 230px;"></p>
+                            <p class="about_text input">Sua Senha:<br><input type="password" name="passowrd" value="" class="contact" style="width: 230px;"></p>
+                            <p><input type="submit" id="send" class="btn btn-small but_top" value="Acessar" /></p>
+                            </form>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="accordion-group">
+                        <div class="accordion-heading">
+                            <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion2" href="#collapseTwo">Acesso de Professores</a>
+                        </div>
+                        <div id="collapseTwo" class="accordion-body collapse">
+                            <div class="accordion-inner">
+                                <form action="<?php echo $this->url(array('module' => 'login', 'controller' => 'index', 'action' => 'professores')); ?>" method="post" id="contactForm">
+                            <p class="about_text input marg">Seu Username:<br><input type="text" name="username" value="" class="contact" style="width: 230px;"></p>
+			    <p class="about_text input">Sua Senha:<br><input type="password" name="passowrd" value="" class="contact" style="width: 230px;"></p>
+                            <p><input type="submit" id="send" class="btn btn-small but_top" value="Acessar" /></p>
+                            </form>                       
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div> 
+        </div>
+        <div class="span4 portfolio">
+            <p class="intro">
+                O “CENTEP – Centro Tecnológico e Formação Profissional” instituição que oferece os Cursos Técnico em Meio Ambiente, Técnico em Mineração e Técnico em Segurança do Trabalho em Vespasiano, Minas Gerais. 
+            </p>
+        </div>
+        <div class="span4 portfolio">
+            <a href="http://sistec.mec.gov.br/consultapublicaunidadeensino" target="_blank" class="center-elements" style="">
+                <img src="<?php echo$this->baseUrl('/static/img/aut_mec.png'); ?>" alt="" class="intro_img" style="border: none;">
+            </a>
+        </div>
+    </div>
+</div>
+
+<div class="container">                    
+    <div class="row">
+        <div class="span7 portfolio">
+            <h3 class="title"><span>Nossos Cursos</span></h3>		
+            <div class="divide10"></div>
+            <p class="intro">
+                <img src="<?php echo$this->baseUrl('/static/img/tecnico.png'); ?>" alt="" class="intro_img">
+                Os nossos cursos têm duração de 18 meses. Autorizado pela portaria nº 254/2007, 517/2008 e reconhecido pela portaria nº 1501/2009 o que pode ser constatado junto ao órgão de ensino nacional aqui. Veja a lista de nossos cursos e escolha o seu curso técnico.
+                <br /><br/><a href="<?php echo $this->url(array('module' => 'cursos', 'controller' => 'index', 'action' => 'index')); ?>" title="Conheça nossos cursos"><span class="label label-success">Conheça nossos cursos</span></a>
+            </p>
+        </div>
+        <div class="span5 portfolio ">			
+            <h3 class="title marg20"><span>Últimas Noticias</span></h3>	
+            <div class="span6">
+                <ul class="unstyled">
+                    <?php foreach ($this->results as $results): ?>
+                        <li><em class="icon-chevron-right"></em> <a href="<?php echo $this->url(array('module' => 'default', 'controller' => 'noticias', 'action' => 'ler', 'id' => $results->id)); ?>"><?php echo $results->title; ?></a></li>
+                    <?php endforeach; ?>
+                </ul>   
+            </div>	
+        </div>
+    </div>
+</div>
+
+<div class="container">                    
+    <div class="row">	
+        <div class="span12 portfolio">		
+            <div class="row-fluid">
+                <div class="box">
+                    <div class="span9">
+                        <h3>Faça-nos uma visita</h3>
+                        <p>Estamos na Rua Alfredo Albano da Costa, Nº 176 Bairro Jardim Itaú. Vespasiano/Minas Gerais - CEP: 33200-000<br /><b>Telefone:</b> (31) 3621 - 7873 - <b>E-mail:</b> contato@centep.com.br </p>
+                    </div>
+                    <div class="span3">
+                        <a class="btn btn-success btn-large button_purchase" href="#">Entre em Contato</a>
+                    </div> 
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="divide30"></div>

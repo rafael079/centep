@@ -1,0 +1,58 @@
+<?php echo $this->headTitle()->prepend('Usuários Cadastrados'); ?>
+
+<h1 class="grid_12 margin-top no-margin-top-phone">Usuários Cadastrados</h1>
+
+<div class="grid_12">
+    <?php echo $this->flashMessages(); ?>
+</div>
+
+<div class="grid_12">
+    <a href="<?php echo $this->url(array('module' => 'administrador', 'controller' => 'usuarios', 'action' => 'adicionar')); ?>" class="button block blue" style="float: right;">
+        Adicionar novo Usuário
+    </a>
+</div>
+
+<div class="grid_12">
+    <div class="box">
+        <div class="header">
+            <h2><img class="icon" src="<?php echo $this->baseUrl('/static/img/adm/icons/packs/fugue/16x16/application-list.png'); ?>">Lista de Usuários Cadastrados</h2>
+        </div>
+        <div class="content">
+            <table class="dynamic styled" data-filter-Bar="always" data-table-tools='{"display":false}'>
+                <thead>
+                    <tr>
+                        <th>ID</th>
+                        <th>Nome</th>
+                        <th>Username</th>
+                        <th>E-mail</th>
+                        <th>Grupo/Permissão</th>
+                        <th>Opções</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <?php foreach ($this->results as $results): ?>
+                    <tr>
+                        <td class="center"><?php echo $results->id; ?></td>
+                        <td><?php echo $results->name; ?></td>
+                        <td class="center"><strong><?php echo $results->username; ?></strong></td>
+                        <td class="center"><strong><?php echo $results->mail; ?></strong></td>
+                        <?php if(isset($results->groups)):?>
+                        <td class="center"><span class="badge block orange"><?php echo strtoupper( $results->groups ); ?></span></td>
+                        <?php else: ?>
+                        <td class="center"><span class="badge block red">SEM GRUPO</span></td>
+                        <?php endif; ?>
+                        <td class="center">
+                            <a href="<?php echo $this->url(array('module' => 'administrador', 'controller' => 'usuarios', 'action' => 'editar', 'id' => $results->id)); ?>" class="tooltip button grey block" data-gravity="s" original-title="Editar Usuário">
+                                Editar
+                            </a>          
+                            <a href="<?php echo $this->url(array('module' => 'administrador', 'controller' => 'usuarios', 'action' => 'excluir', 'id' => $results->id)); ?>" class="tooltip button block red" data-gravity="s" original-title="Excluir Usuário">
+                                Excluir
+                            </a>
+                        </td>
+                    </tr>
+                    <?php endforeach; ?>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>

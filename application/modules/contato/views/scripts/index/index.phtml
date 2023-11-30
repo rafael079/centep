@@ -1,0 +1,57 @@
+<?php echo $this->headTitle()->prepend('Entre em Contato'); ?>
+<div class="tag_line">
+    <div class="container">
+        <div class="row">
+            <div class="span12">
+                <div class="welcome">
+                    <h3 class="wel_rig"><span class="colored">Entre em Contato</span><span class="colored">:</span> Precisa de ajuda? Contate-nos!</h3>
+                    <div class="wel_mag"><div class="bbread"><a class="subpage_block" href="<?php echo $this->url(array('module' => 'default', 'controller' => 'index', 'action' => 'index')); ?>">Inicio</a><div class="subpage_breadcrumbs_dv"></div>Contato</div></div>
+                    <div class="clearfix"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div><!-- /tag_line -->
+
+<div class="main_content_area">
+    <div class="container">
+        <div class="row">
+            <div class="span12">
+                <iframe width="100%" height="250" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" src="http://maps.google.com.br/maps?f=d&amp;source=s_d&amp;saddr=&amp;daddr=-19.693708,-43.926666&amp;geocode=&amp;hl=pt-BR&amp;mra=mift&amp;mrsp=0&amp;sz=16&amp;sll=-19.69387,-43.926687&amp;sspn=0.010728,0.013797&amp;ie=UTF8&amp;ll=-19.69387,-43.926687&amp;spn=0.014142,0.018239&amp;z=15&amp;output=embed"></iframe>                                                           
+            </div>
+        </div>
+    </div>	
+</div><!-- /main_content_area -->
+
+<div class="main_content_area">
+    <div class="container">
+        <div class="row">
+            <div class="span8 marginright">        
+                <h3 class="title"><span>Formulário de Contato</span></h3>
+                <p class="about_text">Entre em contato e esclareça todas as suas duvidas, envie as suas sugestões e criticas. Utilize o formulário abaixo para enviar a sua mensagem. </p>
+                <form action="<?php echo $this->form->getAction(); ?>" method="<?php echo $this->form->getMethod(); ?>" id="contactForm">
+                    <p class="about_text input marg">Seu nome (obrigatório):<br><?php echo $this->form->name; ?></p>
+                    <p class="about_text input">Seu e-mail (obrigatório):<br><?php echo $this->form->mail; ?></p>
+                    <p class="about_text input">Telefone:<br><?php echo $this->form->phone; ?></p>
+                    <p class="about_text input">Assunto (obrigatório):<br><?php echo $this->form->subject; ?></p>
+                    <p class="about_text input">Sua mensagem (obrigatório):<br><?php echo $this->form->message; ?></p>
+                    <?php echo $this->flashMessages(); ?>
+                    <p><?php echo $this->form->send; ?></p>
+                </form>
+            </div>
+            <div class="span4">        
+                <h3 class="title marg20"><span>Informações</span></h3>
+                <p class="adress marg20">
+                    <i class="icon-map-marker"></i> Endereço: Rua Alfredo Albano da Costa, Nº 176 Bairro Jardim Itaú. Vespasiano/MG<br>
+                    <i class="icon-phone"></i> Telefone: (031) 3621-7873<br>
+                    <i class="icon-screenshot"></i> CEP: 33200-000<br>
+                    <i class="icon-envelope"></i> Email: <a href="mailto:contato@centep.com.br" target="_blank" class="colorend">contato@centep.com.br</a>
+                </p>  
+                <h3 class="title marg20"><span>Redes Sociais</span></h3>
+						<ul class="social-links-sec">
+							<li class="facebook"><a href="http://www.facebook.com/notes/#!/profile.php?id=100003150794483&sk=notes"><i class="icon-facebook icon-large"></i></a></li>
+						</ul>
+            </div>
+        </div>
+    </div>
+</div><!-- /main_content_area -->

@@ -1,0 +1,10 @@
+<?php $this->headScript()->captureStart() ?>
+    function openwina(id){
+        window.open("http://www.centep.com.br/site/administrador/modules/relatorios/imprimir_diario.php?professor=<?php echo $this->teachers->id; ?>&disciplina=<?php echo $this->disciplines->id; ?>&curso=<?php echo $this->courses->id; ?>&modulo=<?php echo $this->module; ?>", "", "height = 600, width = 940, toolbar = no, scrollbars = yes");
+    }
+<?php $this->headScript()->captureEnd() ?>
+<div class="center-elements">
+    <a href="#" onclick="openwina();" class="button block blue">
+        IMPRIMIR DIÁRIO
+    </a>
+</div>

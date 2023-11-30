@@ -1,0 +1,76 @@
+<?php echo $this->headTitle()->prepend('Cadastrar Professores'); ?>
+
+<h1 class="grid_12 margin-top no-margin-top-phone">Cadastrar Professores</h1>
+
+<div class="grid_12">
+    <?php echo $this->flashMessages(); ?>
+</div>
+
+<form method="<?php echo $this->form->getMethod(); ?>" action="<?php echo $this->form->getAction(); ?>" class="grid_12 validate">
+    <fieldset>
+        <legend>Cadastrar Professores</legend>
+        <div class="row">
+            <label for="name">
+                <strong>Nome do Professor</strong>
+                <small>Informe o nome do professor</small>
+            </label>
+            <div>
+                <?php echo $this->form->name; ?>
+            </div>
+        </div>
+        <div class="row">
+            <label for="mail">
+                <strong>E-mail do Professor</strong>
+                <small>Informe o e-mail do professor</small>
+            </label>
+            <div>
+                <?php echo $this->form->mail; ?>
+            </div>
+        </div>
+        <div class="row">
+            <label for="courses">
+                <strong>Curso selecionado</strong>
+                <small>Informe o curso do professor</small>
+            </label>
+            <div>
+                <input type="text" disabled value="<?php echo $this->course; ?>" name="" id="" />
+            </div>
+        </div>
+        
+        <div class="row">
+            <label for="disciplines">
+                <strong>Selecione as Disciplinas</strong>
+                <small>Informe o disciplinas do professor</small>
+            </label>
+            <div>
+                <?php echo $this->form->disciplines; ?>
+            </div>
+        </div>
+    </fieldset>
+    <fieldset>
+        <legend>Acesso Ao Site</legend>
+        <div class="row">
+            <label for="username">
+                <strong>Username</strong>
+                <small>Defina um username para acesso do professor</small>
+            </label>
+            <div>
+                <?php echo $this->form->username; ?>
+            </div>
+        </div>
+        <div class="row">
+            <label for="password">
+                <strong>Senha</strong>
+                <small>Defina uma senha para acesso do professor</small>
+            </label>
+            <div>
+                <?php echo $this->form->password; ?>
+            </div>
+        </div>
+    </fieldset>
+    <div class="actions">
+        <div class="left">
+            <?php echo $this->form->send; ?>
+        </div>
+    </div>
+</form>

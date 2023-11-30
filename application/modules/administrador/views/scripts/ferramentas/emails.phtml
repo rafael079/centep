@@ -1,0 +1,63 @@
+<?php echo $this->headTitle()->prepend('Envio de e-mails'); ?>
+
+<h1 class="grid_12 margin-top no-margin-top-phone">Envio de e-mails</h1>
+
+<div class="grid_12">
+    <?php echo $this->flashMessages(); ?>
+</div>
+
+<form method="<?php echo $this->form->getMethod(); ?>" action="<?php echo $this->form->getAction(); ?>" class="grid_12 validate">
+    <fieldset>
+        <legend>Adicionar um novo Grupo de Usuário</legend>
+        <div class="row">
+            <label for="subject">
+                <strong>Assunto da Mensagem</strong>
+                <small>Informe o assunto da mensagem</small>
+            </label>
+            <div>
+                <?php echo $this->form->subject; ?>
+            </div>
+        </div>
+        <div class="row">
+            <label for="students">
+                <strong>Enviar para Aluno</strong>
+                <small>Informe um aluno que você deseja enviar o e-mail</small>
+            </label>
+            <div>
+                <?php echo $this->form->students; ?>
+            </div>
+        </div>
+        <div class="row">
+            <label for="courses">
+                <strong>Enviar por Curso</strong>
+                <small>Enviar para todos os alunos de um curso</small>
+            </label>
+            <div>
+                <?php echo $this->form->courses; ?>
+            </div>
+        </div>
+        <div class="row">
+            <label for="senders">
+                <strong>E-mails Personalizados</strong>
+                <small>Informe os e-mails que você deseja enviar a mensagem<br/>Separe os e-mails por virgula(,)</small>
+            </label>
+            <div>
+                <?php echo $this->form->senders; ?>
+            </div>
+        </div>
+        <div class="row">
+            <label for="text">
+                <strong>Sua mensagem</strong>
+                <small>Escreva a Mensagem</small>
+            </label>
+            <div>
+                <?php echo $this->form->text; ?>
+            </div>
+        </div>
+    </fieldset>
+    <div class="actions">
+        <div class="left">
+            <?php echo $this->form->send; ?>
+        </div>
+    </div>
+</form>

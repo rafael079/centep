@@ -1,0 +1,60 @@
+<?php echo $this->headTitle()->prepend('Lançar Notas'); ?>
+<h1 class="grid_12 margin-top no-margin-top-phone">Lançar Notas</h1>
+
+<div class="grid_12">
+    <?php echo $this->flashMessages(); ?>
+</div>
+
+<div class="grid_12">
+    <div class="box">
+        <div class="header">
+            <h2><img class="icon" src="<?php echo $this->baseUrl('/static/img/adm/icons/packs/fugue/16x16/application-list.png'); ?>">Lançamento de Notas</h2>
+        </div>
+        <div class="content">
+            <table class="dynamic styled" data-filter-Bar="always" data-table-tools='{"display":false}'>
+                <thead>
+                    <tr>
+                        <th>ID</th>
+                        <th>Nome</th>
+                        <th>Curso</th>
+                        <th>Lançar Nota</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <?php foreach ($this->results as $results): ?>
+                    <tr>
+                        <td class="center">
+                            <?php echo $results->id; ?>
+                        </td>
+                        <td>
+                            <?php echo $results->name; ?>
+                        </td>
+                        <td class="center">
+                            <strong><?php echo $results->course_name; ?></strong>
+                        </td>
+                        <td class="center">
+                            <a class="button block red" href="<?php echo $this->url(array('module' => 'administrador', 'controller' => 'notas', 'action' => 'boletim', 'id' => $results->id)); ?>">LANÇAR NOTA</a>
+                            <a id="dialog_select_module_<?php echo $results->id; ?>" class="button block blue" href="javascript:void(0);">Imprimir Boletim</a>
+                                <div style="display: none;" id="dialog_select_<?php echo $results->id; ?>" title="Imprimir Boletim">
+                                    <div style="overflow: hidden">
+                                        <p class="_100 center-elements">
+                                            <a class="button block blue"  onclick="open(<?php echo $results->id; ?>, '1');" href="#">1º Modulo</a>
+                                        </p>
+                                        <p class="_100 center-elements"><a class="button block blue" href="<?php echo $this->url(array('module' => 'administrador', 'controller' => 'notas', 'action' => 'imprimir', 'id' => $results->id . '_2')); ?>">2º Modulo</a></p>
+                                        <p class="_100 center-elements"><a class="button block blue" href="<?php echo $this->url(array('module' => 'administrador', 'controller' => 'notas', 'action' => 'imprimir', 'id' => $results->id . '_3')); ?>">3º Modulo</a></p>
+                                        <p class="_100 center-elements"><a class="button block blue" href="<?php echo $this->url(array('module' => 'administrador', 'controller' => 'notas', 'action' => 'imprimir', 'id' => $results->id . '_4')); ?>">4º Modulo</a></p>
+                                    </div>
+                                    <div class="actions">
+                                            <div class="left">
+                                                <button class="grey">Cancelar</button>
+                                            </div>
+                                        </div>
+                                </div>
+                        </td>
+                    </tr>
+                    <?php endforeach; ?>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>

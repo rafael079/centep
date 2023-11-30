@@ -1,0 +1,64 @@
+<?php echo $this->headTitle()->prepend('Adicionar novo Usuário'); ?>
+<h1 class="grid_12 margin-top no-margin-top-phone">Adicionar novo Usuário</h1>
+
+<form method="<?php echo $this->form->getMethod(); ?>" action="<?php echo $this->form->getAction(); ?>" class="grid_12 validate">
+    <fieldset>
+        <legend>Adicionar um novo Usuário</legend>
+        <div class="row">
+            <label for="name">
+                <strong>Nome do Usuário</strong>
+                <small>Informe o nome completo do usuário</small>
+            </label>
+            <div>
+                <?php echo $this->form->name; ?>
+            </div>
+        </div>
+        <div class="row">
+            <label for="mail">
+                <strong>E-mail do Usuário</strong>
+                <small>Informe o e-mail do usuário</small>
+            </label>
+            <div>
+                <?php echo $this->form->mail; ?>
+            </div>
+        </div>
+    </fieldset>
+    <fieldset>
+        <legend>Dados para acesso</legend>
+        <div class="row">
+            <label for="username">
+                <strong>Username</strong>
+                <small>Informe um username para acesso do usuário</small>
+            </label>
+            <div>
+                <?php echo $this->form->username; ?>
+            </div>
+        </div>
+        <div class="row">
+            <label for="password">
+                <strong>Senha</strong>
+                <small>Informe uma senha para acesso do usuário</small>
+            </label>
+            <div>
+                <?php echo $this->form->password; ?>
+            </div>
+        </div>
+    </fieldset>
+    <fieldset>
+        <legend>Permissões de acesso</legend>
+        <div class="row">
+            <label for="username">
+                <strong>Grupo</strong>
+                <small>Informe um grupo de acesso para este usuário</small>
+            </label>
+            <div>
+                <?php echo $this->form->group; ?>
+            </div>
+        </div>
+    </fieldset>
+    <div class="actions">
+        <div class="left">
+            <?php echo $this->form->send; ?>
+        </div>
+    </div>
+</form>

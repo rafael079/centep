@@ -1,0 +1,63 @@
+<?php echo $this->headTitle()->prepend('Gerar Boletos'); ?>
+
+<h1 class="grid_12 margin-top no-margin-top-phone">Gerar Boletos</h1>
+
+<div class="grid_12">
+    <?php echo $this->flashMessages(); ?>
+</div>
+
+<form action="http://www.centep.com.br/site/administrador/modules/ferramentas/gerar_boleto_itau_manual.php" method="post" class="grid_12 validate">
+    <fieldset>
+        <legend>Gerador de Boletos - BANCO ITAÚ</legend>
+        <div class="row">
+            <label for="nome">
+                <strong>Nome do Pagador</strong>
+                <small>Defina o nome do pagador</small>
+            </label>
+            <div>
+                <input type="text" name="nome" id="nome" />
+            </div>
+        </div>
+        <div class="row">
+            <label for="valor">
+                <strong>Valor do boleto</strong>
+                <small>Defina um valor para o boleto</small>
+            </label>
+            <div>
+                <input type="text" name="valor" id="valor" placeholder="Ex: 100,99" />
+            </div>
+        </div>
+        <div class="row">
+            <label for="numero">
+                <strong>Código</strong>
+                <small>Defina um código para o boleto</small>
+            </label>
+            <div>
+                <input type="text" name="numero" id="numero"/>
+            </div>
+        </div>
+        <div class="row">
+            <label for="vencimento">
+                <strong>Data de vencimento</strong>
+                <small>Defina a data de vencimento</small>
+            </label>
+            <div>
+                <input data-error-type="inline" class="maskDate" name="vencimento" id="vencimento" type="text" />
+            </div>
+        </div>
+        <div class="row">
+            <label for="obs">
+                <strong>Observações</strong>
+                <small>Informações adicionais</small>
+            </label>
+            <div>
+                <input type="text" name="obs" id="obs"/>
+            </div>
+        </div>
+    </fieldset>
+    <div class="actions">
+        <div class="left">
+            <input type="submit" value="Gerar Boleto" />
+        </div>
+    </div>
+</form>

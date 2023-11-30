@@ -1,0 +1,53 @@
+<?php echo $this->headTitle()->prepend('Login de Usuário'); ?>
+<div class="tag_line">
+    <div class="container">
+        <div class="row">
+            <div class="span12">
+                <div class="welcome">
+                    <h3 class="wel_rig"><span class="colored">Login</span><span class="colored">:</span> Acesso de Usuários</h3>
+                    <div class="wel_mag"><div class="bbread"><a class="subpage_block" href="<?php echo $this->url(array('module' => 'default', 'controller' => 'index', 'action' => 'index')); ?>">Inicio</a><div class="subpage_breadcrumbs_dv"></div>Login</div></div>
+                    <div class="clearfix"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div> <!-- /tag_line -->
+
+<div class="main_content_area">
+    <div class="container ">
+        <div class="row">
+            <div class="span3">
+                <ul class="sub-menu-short short_left">
+                    <li><a href="<?php echo $this->url(array('module' => 'contato', 'controller' => 'index', 'action' => 'index')); ?>">Recupere sua Senha</a></li>
+                    <li><a href="<?php echo $this->url(array('module' => 'contato', 'controller' => 'index', 'action' => 'index')); ?>">Problemas? Entre em contato.</a></li>
+                </ul>
+            </div>
+            <div class="span9">
+                <?php echo $this->flashMessages(); ?>
+                <div class="bs-docs-example">
+                    <ul id="myTab" class="nav nav-tabs">
+                        <li class="active"><a href="#home" data-toggle="tab">Acesso de Alunos</a></li>
+                        <li><a href="#profile" data-toggle="tab">Acesso de Professores</a></li>
+                    </ul>
+                    <div id="myTabContent" class="tab-content">
+                        <div class="tab-pane fade in active" id="home">
+                            <form action="<?php echo $this->url(array('module' => 'login', 'controller' => 'index', 'action' => 'alunos')); ?>" method="post" id="contactForm">
+                            <p class="about_text input marg">Seu Username:<br><input type="text" name="username" value="" class="contact" size="40"></p>
+                            <p class="about_text input">Sua Senha:<br><input type="password" name="passowrd" value="" class="contact" size="40"></p>
+                            <p><input type="submit" id="send" class="btn btn-small but_top" value="Acessar" /></p>
+                            </form>
+                        </div>
+                        <div class="tab-pane fade" id="profile">
+                            <form action="<?php echo $this->url(array('module' => 'login', 'controller' => 'index', 'action' => 'professores')); ?>" method="post" id="contactForm">
+                            <p class="about_text input marg">Seu Username:<br><input type="text" name="username" value="" class="contact" size="40"></p>
+			    <p class="about_text input">Sua Senha:<br><input type="password" name="passowrd" value="" class="contact" size="40"></p>
+                            <p><input type="submit" id="send" class="btn btn-small but_top" value="Acessar" /></p>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="divide30"></div>

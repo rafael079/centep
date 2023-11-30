@@ -1,0 +1,29 @@
+<div class="tag_line">
+    <div class="container">
+        <div class="row">
+            <div class="span12">
+                <div class="welcome">
+                    <h3 class="wel_rig"><span class="colored">Noticias</span><span class="colored">:</span> <?php echo $this->results->title; ?></h3>
+                    <div class="wel_mag"><div class="bbread"><a class="subpage_block" href="<?php echo $this->url(array('module' => 'default', 'controller' => 'index', 'action' => 'index')); ?>">Inicio</a><div class="subpage_breadcrumbs_dv"></div>Noticias</div></div>
+                    <div class="clearfix"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>	
+
+<div class="main_content_area">
+    <div class="container">
+        <div class="row">
+            <div class="span12">
+                <div class="post">
+                    <div class="post-content">
+                        <p class="about_text input">
+                            <?php echo $this->results->text; ?>
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

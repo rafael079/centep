@@ -1,0 +1,44 @@
+<div class="tag_line">
+    <div class="container">
+        <div class="row">
+            <div class="span12">
+                <div class="welcome">
+                    <h3 class="wel_rig"><span class="colored">Bem-vindo(a)</span><span class="colored">:</span> <?php echo $this->results->name; ?> </h3>
+                    <div class="wel_mag"><div class="bbread"><a class="subpage_block" href="<?php echo $this->url(array('module' => 'alunos', 'controller' => 'index', 'action' => 'index')); ?>">Área do Aluno</a><div class="subpage_breadcrumbs_dv"></div>Alterar seus Dados</div></div>
+                    <div class="clearfix"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>	
+
+<div class="main_content_area">
+    <div class="container ">
+        <div class="row">
+            <div class="span3">
+                <ul class="sub-menu-short short_left">
+                    <li><a href="<?php echo $this->url(array('module' => 'alunos', 'controller' => 'index', 'action' => 'index')); ?>">Inicio</a></li>
+                    <li class="actives" id="dif"><a href="<?php echo $this->url(array('module' => 'alunos', 'controller' => 'index', 'action' => 'dados')); ?>">Meus dados</a></li>
+                    <li><a href="<?php echo $this->url(array('module' => 'alunos', 'controller' => 'index', 'action' => 'perguntas')); ?>">Perguntar ao Professor</a></li>
+                    <li><a href="<?php echo $this->url(array('module' => 'alunos', 'controller' => 'index', 'action' => 'boletim')); ?>">Minhas Notas e Faltas</a></li> 	
+                    <li><a href="<?php echo $this->url(array('module' => 'alunos', 'controller' => 'index', 'action' => 'arquivos')); ?>">Arquivos</a></li>
+                    <li><a href="<?php echo $this->url(array('module' => 'alunos', 'controller' => 'index', 'action' => 'sair')); ?>">Sair</a></li>
+                </ul>			
+            </div>
+            <div class="span9">
+                <div class="row-fluid">  
+                    <?php echo $this->flashMessages(); ?>
+                    <h3 class="title"><span>Editar Meus Dados</span></h3>
+                    <form action="<?php echo $this->form->getAction(); ?>" method="<?php echo $this->form->getMethod(); ?>" id="contactForm">
+                        <p class="about_text input marg">Seu nome completo (Obrigatório):<br><?php echo $this->form->name; ?></p>
+                        <p class="about_text input marg">Seu E-mail (Obrigatório):<br><?php echo $this->form->mail; ?></p>
+                        <h3 class="title"><span>Alterar a Senha:</span></h3>
+                        <p class="about_text input marg">Nova senha:<br><?php echo $this->form->password; ?></p>
+                        <p><?php echo $this->form->send; ?></p>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="divide30"></div>

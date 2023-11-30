@@ -1,0 +1,71 @@
+<?php echo $this->headTitle()->prepend('Matricula'); ?>
+<div class="tag_line">
+    <div class="container">
+        <div class="row">
+            <div class="span12">
+                <div class="welcome">
+                    <h3 class="wel_rig"><span class="colored">Termos de Uso:</span> Cadastro Online</h3>
+                    <div class="wel_mag"><div class="bbread"><a class="subpage_block" href="<?php echo $this->url(array('module' => 'default', 'controller' => 'index', 'action' => 'index')); ?>">Inicio</a><div class="subpage_breadcrumbs_dv"></div>Cursos</div></div>
+                    <div class="clearfix"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div><!-- /tag_line -->
+
+<div class="main_content_area">
+    <div class="container">
+        <div class="row">
+            <div class="span12">
+                <h4>Termos Contratuais para Inscrição</h4>
+                <p>
+                    Declaro que tenho conhecimento das condições em que esta reserva é feita e com elas manifesto minha expressa concordância:
+                </p>
+                <p>Declaro que tenho conhecimento das condições em que esta reserva é feita e com elas manifesto minha expressa concordância:<br>
+                    <br>
+                    <strong>1 -</strong> Pago neste ato a importância de R$100,00 (cem reais) a título de reserva de vaga.<br>
+                    <strong>2 -</strong> Este valor será levado a meu crédito e compensado no valor da 1º mensalida a ser paga na efetivação da matricula, caso eu e meu beneficiário sejamos aceitos (a) no curso acima especificado.<br>
+                    <strong>3 -</strong> Estou ciente que o contrato de prestação de serviço será elaborado nos termos e condições estabelecidas pela Escola, respeitada a legislação vigente no ato da assinatura do contrato.<br>
+                    <strong>4 -</strong> Estou ciente que este contrato de reserva de vaga está condicionado a formação de turma, e, caso esta não ocorra terei direito a solicitar a devolução do valor pago por mim no item 01 deste, sem acréscimos de multas e/ou correções ou descontos de despesas.<br>
+                    <strong>5 -</strong> Caso ocorra minha desistência antes do início das atividades escolares, deverei formular por escrito meu propósito e a Escola terá o prazo de 10 (dez) dias úteis, a contar da data da desistência de minha reserva de vaga, para efetuar a devolução do valor por mim pago.<br>
+                    <strong>6 -</strong> Caso a Escola tenha dado início às atividades escolares, tenho ciência que não terei direito a pleitear nenhum valor a título de devolução, restituição ou indenização.<br>
+                    <strong>7 -</strong> Tenho ciência que a matrícula somente será efetivada se:<br>
+                <div style="padding-left: 20px;">
+                    a) o contrato de prestação de serviços educacionais for assinado pelos responsáveis e pelo aluno beneficiário;<br>
+                    b) se o valor constante no item 1 deste tiver sido pago; e, em caso de pagamento com cheque, se este tiver sido compensado;<br>
+                    c) se não houver dívidas de parcelas passadas, para com estabelecimento de ensino; <br>
+                    d) Se o aluno não tiver sido enquadrado, anteriormente, em advertências ou motivos disciplinares considerados graves pela Escola. <br>
+                </div>
+                <strong><br>
+                    8 -</strong> O valor por mim e por meu beneficiário que aqui pago é referente ao curso acima especificado e turma para a qual serei designado a critério da Escola, portanto sem direito a transferência para outro curso ou turma que posteriormente poderão ter ou tiveram iniciadas suas inscrições. <strong><br>
+                    9 -</strong> A data da efetivação da matrícula ficará exclusivamente a critério da Escola, não podendo ultrapassar o início das atividades escolares. <strong><br>
+                    10 -</strong> Declaro por meio desta que fui devidamente informado e esclarecido no ato de minha reserva de vaga sobre matrícula, valores, duração, horários, parte disciplinar, regulamentos internos, modalidade, situação, finalidade, datas, condições gerais, e que obtive da Escola total e pleno atendimento, estando plenamente satisfeito, sem nada mais ter a reclamar ou pleitear. <strong><br>
+                    11 -</strong> O presente contrato de “reserva de vaga” não representa o contrato de prestação de serviços educacionais. <br>
+                <strong>12 -</strong> Na hipótese de preenchimento do presente requerimento pelo próprio aluno, sem o pagamento do valor fixado no item 1 deste, seu conteúdo terá validade meramente informativo. <strong><br>
+                    13 -</strong> Concordo desde já e plenamente que minha mera infrequência às aulas ou atividades escolares, não me desobriga do pagamento de minhas mensalidades escolares e que no início do mês em que esta se iniciar, deverei proceder com o pagamento de minha primeira mensalidade. A prorrogação ou não deste prazo de pagamento ficará exclusivamente a critério da Escola. <br>
+                <strong>14 -</strong> Após o início das atividades escolares, somente se caracterizará como desistência do aluno beneficiário (a), quando este informar, “apenas por escrito”, à secretaria da escola sobre sua intenção. <br>
+                <strong>15 -</strong> Estou ciente que o uso de uniforme nas dependências da escola é obrigatório e que 02 (duas) camisas estão inclusas no valor de minha matrícula e que as receberei após o início das atividades. <br>
+                <strong>16 -</strong> Pasta ou mochila escolar, além de apostilas escolares, devem ser solicitados por encomenda e adquiridas a parte, inclusive seu pagamento, portanto, não estão incluídas neste contrato de reserva de vaga e sem direito a troca.
+                Sem mais, subscrevo. </p>
+            </div>
+        </div>
+    </div>
+    <div class="container">                    
+        <div class="row">	
+            <div class="span12 portfolio">		
+                <div class="row-fluid">
+                    <div class="box">
+                        <div class="span9">
+                            <h3>Li, entendi e aceito os termos de contrato da Centep</h3>
+                            <p>Caso você já tenha lido os termos de adesão descritos acima, clique no botão <i>Efetuar o Cadastro</i> ao lado para completar a sua inscrição.</p>
+                        </div>
+                        <div class="span3">
+                            <a class="btn btn-success btn-large button_purchase" href="<?php echo $this->url(array('module' => 'cursos', 'controller' => 'cadastro', 'action' => 'proximo', 'curso' => $this->curso)); ?>">Efetuar o Cadastro!</a>
+                        </div> 
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="divide30"></div>
+</div>

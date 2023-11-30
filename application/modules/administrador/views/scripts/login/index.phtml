@@ -1,0 +1,95 @@
+<section id="toolbar">
+    <div class="container_12">
+        <div class="left">
+            <ul class="breadcrumb">
+
+                <li><a href="javascript:void(0);">CENTEP</a></li>
+                <li><a href="javascript:void(0);">Administrador</a></li>
+
+            </ul>
+        </div>
+        <div class="right">
+            <ul>
+                <li><a href="<?php echo $this->url(array('module' => 'index', 'controller' => 'index', 'action' => 'index')); ?>"><span class="icon i14_bended-arrow-left"></span>Ir para o Site</a></li>
+            </ul>
+        </div>
+        <div class="phone">
+            <li><a href="#"><span class="icon icon-home"></span></a></li>
+            <li><a href="#"><span class="icon icon-heart"></span></a></li>
+        </div>
+    </div>
+</section>
+<header class="container_12">
+    <div class="container">
+        <a href="<?php echo $this->url(array('module' => 'administrador', 'controller' => 'index', 'action' => 'index')); ?>">
+            <img src="<?php echo$this->baseUrl('/static/img/adm/logo.png'); ?>" alt="Centep" >
+        </a>
+        <div class="right">
+            <span>Perdeu sua senha?</span>
+            <a href="javascript:void(0);">Recuperar Senha</a>
+        </div>
+    </div>
+</header>
+
+<section id="login" class="container_12 clearfix">
+
+    <form action="<?php echo $this->form->getAction(); ?>" method="<?php echo $this->form->getMethod(); ?>" class="box validate">
+
+        <div class="header">
+            <h2>Acesso de usuários</h2>
+        </div>
+<div class="grid_12">
+    <?php echo $this->flashMessages(); ?>
+</div>
+        <div class="content">
+            
+                
+
+            <!-- Login messages -->
+            <div class="login-messages">
+                <div class="message welcome">Seja bem-vindo!</div>
+                <div class="message failure">Preencha todos os campos.</div>
+            </div>
+
+            <!-- The form -->
+            <div class="form-box">
+
+                <div class="row">
+                    <label for="username">
+                        <strong>Username</strong>
+                        <small>Informe seu username</small>
+                    </label>
+                    <div>
+                        <?php echo $this->form->username; ?>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <label for="password">
+                        <strong>Senha</strong>
+                        <small>Informe sua senha</small>
+                    </label>
+                    <div>
+                        <?php echo $this->form->password; ?>
+                    </div>
+                </div>
+
+            </div><!-- End of .form-box -->
+
+        </div><!-- End of .content -->
+
+        <div class="actions">
+            <div class="left">
+            </div>
+            <div class="right">
+                <?php echo $this->form->send; ?>
+            </div>
+        </div><!-- End of .actions -->
+
+    </form><!-- End of form -->
+
+</section>
+
+<div style="text-align: center">
+    <img src="<?php echo$this->baseUrl('/static/img/ombux2.png'); ?>" alt="OmBux" >
+</div>

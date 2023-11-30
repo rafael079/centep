@@ -1,0 +1,95 @@
+<?php echo $this->headTitle()->prepend('Lançar Notas'); ?>
+<h1 class="grid_12 margin-top no-margin-top-phone">Lançar Notas</h1>
+
+<div class="grid_12">
+    <?php echo $this->flashMessages(); ?>
+</div>
+
+<?php $this->headScript()->captureStart() ?>
+function openwina(){
+         window.open("<?php echo $this->baseUrl('administrador/notas/imprimir/id/' . $this->result->id. '/modulo/'. $this->parm); ?>","","height = 600, width = 800, toolbar = no, scrollbars = yes");
+}                            
+<?php $this->headScript()->captureEnd() ?>
+<div class="grid_12">
+    <a href="#" class="button block blue" onclick="openwina();" style="float: right;">
+        Imprimir Boletim
+    </a>
+</div>
+
+<div class="grid_12">
+    <div class="box-note">
+        <p><b>Nome do Aluno:</b> <?php echo $this->result->name; ?>.</p>
+        <p><b>Curso Escolhido:</b> <?php echo $this->result->course_name; ?>.</p>
+    </div>
+</div>
+
+<div class="grid_12">
+    <a class="button block <?php if ($this->modulo == 1): ?>grey flat<?php endif; ?>" href="<?php echo $this->url(array('module' => 'administrador', 'controller' => 'notas', 'action' => 'boletim', 'modulo' => 1), null, false); ?>">1º MÓDULO</a>
+    <a class="button block <?php if ($this->modulo == 2): ?>grey flat<?php endif; ?>" href="<?php echo $this->url(array('module' => 'administrador', 'controller' => 'notas', 'action' => 'boletim', 'modulo' => 2), null, false); ?>">2º MÓDULO</a>
+    <a class="button block <?php if ($this->modulo == 3): ?>grey flat<?php endif; ?>" href="<?php echo $this->url(array('module' => 'administrador', 'controller' => 'notas', 'action' => 'boletim', 'modulo' => 3), null, false); ?>">3º MÓDULO</a>
+    <a class="button block <?php if ($this->modulo == 4): ?>grey flat<?php endif; ?>" href="<?php echo $this->url(array('module' => 'administrador', 'controller' => 'notas', 'action' => 'boletim', 'modulo' => 4), null, false); ?>">4º MÓDULO</a>
+</div>
+
+<div class="grid_12">
+    <div class="box">
+        <div class="header">
+            <h2><img class="icon" src="<?php echo $this->baseUrl('/static/img/adm/icons/packs/fugue/16x16/clipboard-task.png'); ?>">Lançar Nota - <?php echo $this->modulo; ?>º MÓDULO</h2>
+        </div>
+        <div class="content">
+            <table class="styled">
+                <thead>
+                    <tr>
+                        <th>Discliplina</th>
+                        <th>Nota 1</th>
+                        <th>Nota 2</th>
+                        <th>Faltas</th>
+                        <th>Faltas Justificadas</th>
+                        <th>Total Notas</th>
+                        <th>Total Faltas</th>
+                        <th>Nota Recuperação</th>
+                        <th>Situação</th>
+                        <th>Lançar</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <?php foreach ($this->get as $results): ?>
+                    <tr>
+                        <form action="" method="POST">
+                            <input type="hidden" name="module" value="<?php echo $this->modulo; ?>">
+                            <input type="hidden" name="discipline" value="<?php echo $results->disciplines_id; ?>">
+                            <td><?php echo $results->name; ?></td>
+                            <td class="center">
+                                <input type="text" name="n_1" value="<?php echo $results->n_1; ?>" style="width: 40px; text-align: center">
+                            </td>
+                            <td class="center">
+                                <input type="text" name="n_2" value="<?php echo $results->n_2; ?>" style="width: 40px; text-align: center">
+                            </td>
+                            <td class="center">
+                                <input type="text" name="f" value="<?php echo $results->f_n; ?>" style="width: 40px; text-align: center">
+                            </td>
+                            <td class="center">
+                                <input type="text"name="f_j" value="<?php echo $results->f_j; ?>" style="width: 40px; text-align: center">
+                            </td>
+                            <td class="center"><?php echo $results->n_1+$results->n_2; ?></td>
+                            <td class="center"><?php echo $results->f_n+$results->f_j; ?></td>
+                            <td class="center">
+                                <input type="text" name="n_r" value="<?php echo $results->n_r; ?>" style="width: 40px; text-align: center">
+                            </td>
+                            <td>
+                                <select name="situation">
+                                    <option value="0" <?php if($results->situation == 0): ?>selected="selected"<?php endif; ?>>Em Andamento</option>
+                                    <option value="1" <?php if($results->situation == 1): ?>selected="selected"<?php endif; ?>>Aprovado</option>
+                                    <option value="2" <?php if($results->situation == 2): ?>selected="selected"<?php endif; ?>>Reprovado</option>
+                                </select>
+                            </td>
+                            <td class="center">
+                                <button type="submit" class="block grey"><span class="icon icon-plus"></span>Lançar Nota</button>
+                            </td>
+                        </form>
+                    </tr>
+                    <?php endforeach; ?>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>

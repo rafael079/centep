@@ -1,0 +1,77 @@
+<div class="tag_line">
+    <div class="container">
+        <div class="row">
+            <div class="span12">
+                <div class="welcome">
+                    <h3 class="wel_rig"><span class="colored">Bem-vindo(a)</span><span class="colored">:</span> <?php echo $this->results->name; ?> </h3>
+                    <div class="wel_mag"><div class="bbread"><a class="subpage_block" href="<?php echo $this->url(array('module' => 'professores', 'controller' => 'index', 'action' => 'index')); ?>">Área do Professor</a><div class="subpage_breadcrumbs_dv"></div>Inicio</div></div>
+                    <div class="clearfix"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>	
+
+<div class="main_content_area">
+    <div class="container ">
+        
+        <?php if ($this->entry == '00:00:00' or is_null($this->entry)): ?>
+        <div class="alert alert-error"<b>Você ainda não marcou seu ponto hoje!</b> <a href="<?php echo $this->url(array('module' => 'professores', 'controller' => 'index', 'action' => 'ponto')); ?>"><b><span class="label label-important">Clique aqui</span></b></a> para marcar sua entrada.</div>
+        <?php elseif ($this->exit == '00:00:00' or is_null($this->exit)): ?>
+        <div class="alert alert-info"<b>Você a sua saida hoje!</b> <a href="<?php echo $this->url(array('module' => 'professores', 'controller' => 'index', 'action' => 'ponto')); ?>"><b><span class="label label-info">Clique aqui</span></b></a> para marcar sua saida.</div>
+        <?php endif; ?>
+        
+        <div class="row">
+            <div class="span3">
+                <ul class="sub-menu-short short_left">
+                    <li><a href="<?php echo $this->url(array('module' => 'professores', 'controller' => 'index', 'action' => 'index')); ?>">Inicio</a></li>
+                    <li><a href="<?php echo $this->url(array('module' => 'professores', 'controller' => 'index', 'action' => 'dados')); ?>">Meus dados</a></li>
+                    <li><a href="<?php echo $this->url(array('module' => 'professores', 'controller' => 'index', 'action' => 'perguntas')); ?>">Perguntar ao Professor</a></li>
+                    <li><a href="<?php echo $this->url(array('module' => 'professores', 'controller' => 'index', 'action' => 'boletim')); ?>">Lançar Notas e Faltas</a></li> 	
+                    <li class="actives" id="dif"><a href="<?php echo $this->url(array('module' => 'professores', 'controller' => 'index', 'action' => 'arquivos')); ?>">Arquivos</a></li>
+                    <li><a href="http://dopdf.softonic.com.br/download#pathbar" target="_blank">Gerador de PDF</a></li>
+                    <li><a href="<?php echo $this->url(array('module' => 'professores', 'controller' => 'index', 'action' => 'sair')); ?>">Sair</a></li>
+                </ul>			
+            </div>
+            <div class="span9">
+                <div class="row-fluid">  
+                    <?php echo $this->flashMessages(); ?>
+                    <h3 class="title"><span>Enviar Arquivos:</span></h3>
+                    <form action="" method="post" id="contactForm" enctype="multipart/form-data">
+                        <p class="about_text input marg">Selecione o arquivo (Obrigatório):<br><input type="file" name="file" id="file" /></p>
+                        <p class="about_text input marg">Descrição para o arquivo (Obrigatório):<br><textarea name="description" id="description" class="contact_width" cols="40" rows="5"></textarea></p>
+                        <p><input type="submit" name="send" id="send" value="Enviar Pergunta" class="btn btn-small but_top"></p>
+                    </form>
+                                        <br>
+                    <table class="table table-striped">
+                        <thead>
+                            <tr>
+                                <th>Descrição do Arquivo</th>
+                                <th>Data da Postagem</th>
+                                <th>Opções</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <?php foreach ($this->lists as $results): ?>
+                            <tr>
+                                <td><?php echo $results->description; ?></td>
+                                <td><?php echo $results->date; ?></td>
+                                <td>
+                                    <a href="<?php echo $this->baseUrl('/uploads/archives/' . $results->file); ?>">
+                                        <span class="label label-info">Baixar Arquivo</span>
+                                    </a>
+                                    <a href="<?php echo $this->url(array('module' => 'professores', 'controller' => 'index', 'action' => 'arquivos', 'excluir' => $results->id)); ?>">
+                                        <span class="label label-important">Excluir</span>
+                                    </a>
+                                </td>
+                            </tr>
+                            <?php endforeach; ?>
+                        </tbody>
+                    </table>    
+                    <br>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="divide30"></div>

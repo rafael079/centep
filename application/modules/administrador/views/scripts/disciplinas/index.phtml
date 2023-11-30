@@ -1,0 +1,51 @@
+<?php echo $this->headTitle()->prepend('Listagem de Disciplinas'); ?>
+<h1 class="grid_12 margin-top no-margin-top-phone">Listagem de Disciplinas</h1>
+
+<div class="grid_12">
+    <?php echo $this->flashMessages(); ?>
+</div>
+
+<div class="grid_12">
+    <a href="<?php echo $this->url(array('module' => 'administrador', 'controller' => 'disciplinas', 'action' => 'adicionar')); ?>" class="button block blue" style="float: right;">
+        Adicionar nova Disciplina
+    </a>
+</div>
+
+<div class="grid_12">
+    <div class="box">
+        <div class="header">
+            <h2><img class="icon" src="<?php echo $this->baseUrl('/static/img/adm/icons/packs/fugue/16x16/application-list.png'); ?>">Listagem de Disciplinas</h2>
+        </div>
+        <div class="content">
+            <table class="dynamic styled" data-filter-Bar="always" data-table-tools='{"display":false}'>
+                <thead>
+                    <tr>
+                        <th>ID</th>
+                        <th>Nome</th>
+                        <th>Curso</th>
+                        <th>Carga Horária</th>
+                        <th>Opções</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <?php foreach ($this->results as $results): ?>
+                    <tr>
+                        <td class="center"><?php echo $results->id; ?></td>
+                        <td><?php echo $results->name; ?></td>
+                        <td class="center"><button class="button block grey"><strong><?php echo strtoupper( $results->courses ); ?></button></span></td>
+                        <td class="center"><strong><?php echo $results->workload; ?></strong></td>
+                        <td class="center">
+                            <a href="<?php echo $this->url(array('module' => 'administrador', 'controller' => 'disciplinas', 'action' => 'editar', 'id' => $results->id)); ?>" class="tooltip button grey block" data-gravity="s" original-title="Editar Disciplina">
+                                Editar
+                            </a>          
+                            <a href="<?php echo $this->url(array('module' => 'administrador', 'controller' => 'disciplinas', 'action' => 'excluir', 'id' => $results->id)); ?>" class="tooltip button block red" data-gravity="s" original-title="Excluir Disciplina">
+                                Excluir
+                            </a>
+                        </td>
+                    </tr>
+                    <?php endforeach; ?>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>

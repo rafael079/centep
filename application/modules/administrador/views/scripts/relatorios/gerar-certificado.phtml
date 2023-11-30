@@ -1,0 +1,47 @@
+<?php echo $this->headTitle()->prepend('Gerar Certificado de Conclusão'); ?>
+
+<h1 class="grid_12 margin-top no-margin-top-phone">Gerar Certificado de Conclusão</h1>
+
+<div class="grid_12">
+    <form class="box validate">
+        <div class="header">
+            <h2>Informações Geradas</h2>
+        </div>
+        <div class="content">
+            <div class="row">
+                <label for="f1_simpleslider">
+                    <strong>Numero de Controle</strong>
+                </label>
+                <div>
+                    <input type="text" name="" id="" value="<?php echo $this->results->control; ?>" disabled="" />
+                </div>
+            </div>
+            <div class="row">
+                <label for="f1_sliderrange">
+                    <strong>Nome do Aluno</strong>
+                </label>
+                <div>
+                    <input type="text" name="" id="" value="<?php echo $this->results->name; ?>" disabled="" />
+                </div>
+            </div>
+            <div class="row">
+                <label for="f1_sliderstep">
+                    <strong>Curso</strong>
+                </label>
+                <div>
+                    <input type="text" name="" id="" value="<?php echo $this->results->courses_name; ?>" disabled="" />
+                </div>
+            </div>
+            <div class="grid_12">
+    <a href="#"  onclick="openwina('<?php echo $this->results->id; ?>');" class="button block blue" style="float: left;">
+        Imprimir Certificado
+    </a>
+</div>
+        </div>
+    </form>
+</div>
+<?php $this->headScript()->captureStart() ?>
+function openwina(id){
+    window.open("http://www.centep.com.br/site/administrador/modules/relatorios/imprimir_certificado.php?controle=<?php echo $this->results->control; ?>&nome=<?php echo $this->results->name; ?>&curso=<?php echo $this->results->courses_name; ?>&mae=<?php echo $this->results->mother; ?>&pai=<?php echo $this->results->father; ?>&nasc=<?php echo $this->results->nationality; ?>&nat=<?php echo $this->results->naturalness; ?>&uf=<?php echo $this->results->city; ?>&cgi=<?php echo $this->results->identity; ?>&conlcu=<?php echo $this->results->conclusion; ?>&nascimento=<?php echo $this->results->conclusion; ?>&aluno="+id,"","height = 600, width = 940, toolbar = no, scrollbars = yes");
+}
+<?php $this->headScript()->captureEnd() ?>

@@ -1,0 +1,54 @@
+<?php echo $this->headTitle()->prepend('Editar Disciplinas'); ?>
+
+<h1 class="grid_12 margin-top no-margin-top-phone">Editar Disciplinas</h1>
+
+<div class="grid_12">
+    <?php echo $this->flashMessages(); ?>
+</div>
+
+<form method="<?php echo $this->form->getMethod(); ?>" action="<?php echo $this->form->getAction(); ?>" class="grid_12 validate">
+    <fieldset>
+        <legend>Editar Disciplinas</legend>
+        <div class="row">
+            <label for="name">
+                <strong>Nome da Disciplina</strong>
+                <small>Define um titulo para a disciplina</small>
+            </label>
+            <div>
+                <?php echo $this->form->name; ?>
+            </div>
+        </div>
+        <div class="row">
+            <label for="course">
+                <strong>Selecione o Curso</strong>
+                <small>Escolha um curso para disciplina</small>
+            </label>
+            <div>
+                <?php echo $this->form->course; ?>
+            </div>
+        </div>
+        <div class="row">
+            <label for="description">
+                <strong>Descrição da Disciplina</strong>
+                <small>Informe uma descrição para disciplina</small>
+            </label>
+            <div>
+                <?php echo $this->form->description; ?>
+            </div>
+        </div>
+        <div class="row">
+            <label for="workload">
+                <strong>Carga Horária</strong>
+                <small>Informe uma carga horária para disciplina</small>
+            </label>
+            <div>
+                <?php echo $this->form->workload; ?>
+            </div>
+        </div>
+    </fieldset>
+    <div class="actions">
+        <div class="left">
+            <?php echo $this->form->send; ?>
+        </div>
+    </div>
+</form>

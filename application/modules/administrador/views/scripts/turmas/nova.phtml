@@ -1,0 +1,26 @@
+<?php echo $this->headTitle()->prepend('Adicionar Turmas'); ?>
+<h1 class="grid_12 margin-top no-margin-top-phone">Adicionar Turmas</h1>
+
+<div class="grid_12">
+    <?php echo $this->flashMessages(); ?>
+</div>
+
+<form method="<?php echo $this->form->getMethod(); ?>" action="<?php echo $this->form->getAction(); ?>" class="grid_12 validate">
+    <fieldset>
+        <legend>Configurações do Sistema</legend>
+        <div class="row">
+            <label for="name">
+                <strong>Nome da Turma</strong>
+                <small>Informe o nome da turma</small>
+            </label>
+            <div>
+                <?php echo $this->form->name; ?>
+            </div>
+        </div>
+    </fieldset>   
+    <div class="actions">
+        <div class="left">
+            <?php echo $this->form->send; ?>
+        </div>
+    </div>
+</form>

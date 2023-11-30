@@ -1,0 +1,56 @@
+<?php echo $this->headTitle()->prepend('Completar o Cadastro'); ?>
+
+<div class="tag_line">
+    <div class="container">
+        <div class="row">
+            <div class="span12">
+                <div class="welcome">
+                    <h3 class="wel_rig"><span class="colored">Completar seu cadastro:</span></h3>
+                    <div class="wel_mag"><div class="bbread"><a class="subpage_block" href="<?php echo $this->url(array('module' => 'default', 'controller' => 'index', 'action' => 'index')); ?>">Inicio</a><div class="subpage_breadcrumbs_dv"></div>Cursos</div></div>
+                    <div class="clearfix"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div><!-- /tag_line -->
+
+<div class="main_content_area">
+    <div class="container">
+        <div class="row">
+            <div class="span12">
+                <?php echo $this->flashMessages(); ?>
+                <p class="about_text"><strong>Segundo Passo:</strong> Informe seus dados. Para criar a sua conta é necessário preencher seus dados no formulário baixo. </p>
+                <form action="<?php echo $this->form->getAction(); ?>" method="<?php echo $this->form->getMethod(); ?>" id="contactForm">
+                    <h3 class="title"><span>Selecione o Curso:</span></h3>
+                    <p class="about_text input marg">Selecione o Curso (Obrigatório):<br><?php echo $this->form->courses; ?></p>
+                    <h3 class="title"><span>Dados Pessoais:</span></h3>
+                    <p class="about_text input marg">Seu nome completo (Obrigatório):<br><?php echo $this->form->name; ?></p>
+                    <p class="about_text input marg">CPF (Obrigatório):<br><?php echo $this->form->cpf; ?></p>
+                    <p class="about_text input marg">Carteira de Identidade (Obrigatório):<br><?php echo $this->form->identity; ?></p>
+                    <p class="about_text input marg">Telefone (Obrigatório):<br><?php echo $this->form->phone; ?></p>
+                    <p class="about_text input marg">Data de Aniversário (Obrigatório):<br><?php echo $this->form->birth; ?></p>
+                    <p class="about_text input marg">Sexo (Obrigatório):<br><?php echo $this->form->sex; ?></p>
+                    <p class="about_text input marg">Nacionalidade (Obrigatório):<br><?php echo $this->form->nationality; ?></p>
+                    <p class="about_text input marg">Naturalidade (Obrigatório):<br><?php echo $this->form->naturalness; ?></p>
+                    <p class="about_text input marg">Estado (Obrigatório):<br><?php echo $this->form->state; ?></p>
+                    <p class="about_text input marg">Nome da Mãe (Obrigatório):<br><?php echo $this->form->mother; ?></p>
+                    <p class="about_text input marg">Nome do Pai (Obrigatório):<br><?php echo $this->form->father; ?></p>
+                    <p class="about_text input marg">Nome do Responsavel:<br><?php echo $this->form->responsible; ?></p>
+                     <h3 class="title"><span>Endereço:</span></h3>
+                    <p class="about_text input marg">Endereço (Obrigatório):<br><?php echo $this->form->address; ?></p>
+                    <p class="about_text input marg">Número (Obrigatório):<br><?php echo $this->form->number; ?></p>
+                    <p class="about_text input marg">Complemento:<br><?php echo $this->form->complement; ?></p>
+                    <p class="about_text input marg">Bairro (Obrigatório):<br><?php echo $this->form->neighborhood; ?></p>
+                    <p class="about_text input marg">Municipio (Obrigatório):<br><?php echo $this->form->city; ?></p>
+                    <p class="about_text input marg">Estado (Obrigatório):<br><?php echo $this->form->state_address; ?></p>
+                    <p class="about_text input marg">CEP (Obrigatório):<br><?php echo $this->form->cep; ?></p>
+                     <h3 class="title"><span>Acesso ao site:</span></h3>
+                    <p class="about_text input marg">E-mail (Obrigatório):<br><?php echo $this->form->mail; ?></p>
+                    <p class="about_text input marg">Username (Obrigatório):<br><?php echo $this->form->username; ?></p>
+                    <p class="about_text input marg">Senha (Obrigatório):<br><?php echo $this->form->password; ?></p>
+                    <p><?php echo $this->form->send; ?></p>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>

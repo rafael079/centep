@@ -1,0 +1,74 @@
+<?php echo $this->headTitle()->prepend('Listagem de Alunos Casdastrados'); ?>
+<h1 class="grid_12 margin-top no-margin-top-phone">Alunos Casdastrados</h1>
+
+<div class="grid_12">
+    <?php echo $this->flashMessages(); ?>
+</div>
+
+<div class="grid_12">
+    <a href="<?php echo $this->url(array('module' => 'administrador', 'controller' => 'alunos', 'action' => 'adicionar')); ?>" class="button block blue" style="float: right;">
+        Adicionar novo Aluno
+    </a>
+</div>
+
+<div class="grid_12">
+    <div class="box">
+        <div class="header">
+            <h2><img class="icon" src="<?php echo $this->baseUrl('/static/img/adm/icons/packs/fugue/16x16/application-list.png'); ?>">Lista de Alunos Cadastrados</h2>
+        </div>
+        <div class="content">
+            <table class="dynamic styled" data-filter-Bar="always" data-table-tools='{"display":false}'>
+                <thead>
+                    <tr>
+                        <th>ID</th>
+                        <th>Nome</th>
+                        <th>Username</th>
+                        <th>E-Mail</th>
+                        <th>Curso</th>
+                        <th>Status</th>
+                        <th>Situação</th>
+                        <th>Opções</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <?php foreach ($this->results as $results): ?>
+                    <tr>
+                        <td class="center"><?php echo $results->id; ?></td>
+                        <td><?php echo $results->name; ?></td>
+                        <td class="center"><strong><?php echo $results->username; ?></strong></td>
+                        <td><?php echo $results->mail; ?></td>
+                        <td class="center"><strong><?php echo $results->courses_name; ?></strong></td>
+                        <td class="center">
+                            <?php if($results->status == 1): ?>
+                            <span class="label label-success">Ativo</span>
+                            <?php elseif($results->status == 0): ?>
+                            <span class="label label-important">Inativo</span>
+                            <?php endif; ?>
+                        </td>
+                        <td class="center">
+                            <?php if($results->situation == 1): ?>
+                            <span class="label label-success">Aprovado</span>
+                            <?php elseif($results->situation == 0): ?>
+                            <span class="label label-important">Em Andamento</span>
+                            <?php elseif($results->situation == 2): ?>
+                            <span class="label label-important">Reprovado</span>
+                            <?php endif; ?>
+                        </td>
+                        <td class="center">
+                            <a href="<?php echo $this->url(array('module' => 'administrador', 'controller' => 'alunos', 'action' => 'editar', 'id' => $results->id)); ?>" class="tooltip button grey block" data-gravity="s" original-title="Editar Aluno">
+                                Editar
+                            </a>          
+                            <a href="<?php echo $this->url(array('module' => 'administrador', 'controller' => 'alunos', 'action' => 'editar-disciplinas', 'id' => $results->id)); ?>" class="tooltip button blue block" data-gravity="s" original-title="Editar Disciplinas do Aluno">
+                                Editar Disciplinas
+                            </a>          
+                            <a href="<?php echo $this->url(array('module' => 'administrador', 'controller' => 'alunos', 'action' => 'excluir', 'id' => $results->id)); ?>" class="tooltip button block red" data-gravity="s" original-title="Excluir Aluno">
+                                Excluir
+                            </a>
+                        </td>
+                    </tr>
+                    <?php endforeach; ?>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>

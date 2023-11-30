@@ -1,0 +1,54 @@
+<?php echo $this->headTitle()->prepend('Editar Cursos'); ?>
+
+<h1 class="grid_12 margin-top no-margin-top-phone">Editar Cursos</h1>
+
+<div class="grid_12">
+    <?php echo $this->flashMessages(); ?>
+</div>
+
+<form method="<?php echo $this->form->getMethod(); ?>" action="<?php echo $this->form->getAction(); ?>" class="grid_12 validate">
+    <fieldset>
+        <legend>Editar Curso</legend>
+        <div class="row">
+            <label for="name">
+                <strong>Nome do Curso</strong>
+                <small>Define um titulo para o curso</small>
+            </label>
+            <div>
+                <?php echo $this->form->name; ?>
+            </div>
+        </div>
+        <div class="row">
+            <label for="description">
+                <strong>Descrição do Curso</strong>
+                <small>Descrição do curso</small>
+            </label>
+            <div>
+                <?php echo $this->form->description; ?>
+            </div>
+        </div>
+        <div class="row">
+            <label for="value">
+                <strong>Valor do Curso</strong>
+                <small>Informe o valor do curso</small>
+            </label>
+            <div>
+                <?php echo $this->form->value; ?>
+            </div>
+        </div>
+        <div class="row">
+            <label for="workload">
+                <strong>Carga Horária</strong>
+                <small>Informe a carga horária do curso</small>
+            </label>
+            <div>
+                <?php echo $this->form->workload; ?>
+            </div>
+        </div>
+    </fieldset>
+    <div class="actions">
+        <div class="left">
+            <?php echo $this->form->send; ?>
+        </div>
+    </div>
+</form>

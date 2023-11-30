@@ -1,0 +1,31 @@
+<?php echo $this->headTitle()->prepend('Editar Grupos de Usuários'); ?>
+<h1 class="grid_12 margin-top no-margin-top-phone">Editar Grupos de Usuários</h1>
+
+<form method="<?php echo $this->form->getMethod(); ?>" action="<?php echo $this->form->getAction(); ?>" class="grid_12 validate">
+    <fieldset>
+        <legend>Editar Grupo de Usuário</legend>
+        <div class="row">
+            <label for="name">
+                <strong>Nome para o Grupo</strong>
+                <small>Defina um nome para o grupo</small>
+            </label>
+            <div>
+                <?php echo $this->form->name; ?>
+            </div>
+        </div>
+        <div class="row">
+            <label for="permissions">
+                <strong>Permissões de Acesso</strong>
+                <small>Permissões de Acesso para o grupo</small>
+            </label>
+            <div>
+                <?php echo $this->form->permissions; ?>
+            </div>
+        </div>
+    </fieldset>
+    <div class="actions">
+        <div class="left">
+            <?php echo $this->form->send; ?>
+        </div>
+    </div>
+</form>

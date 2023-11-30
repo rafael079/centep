@@ -1,0 +1,62 @@
+<?php echo $this->headTitle()->prepend('Diário de Classe'); ?>
+<h1 class="grid_12 margin-top no-margin-top-phone">Diário de Classe</h1>
+
+<div class="grid_12">
+    <?php echo $this->flashMessages(); ?>
+</div>
+
+<form method="<?php echo $this->form->getMethod(); ?>" action="<?php echo $this->form->getAction(); ?>"  class="grid_12 validate">
+    <fieldset>
+        <legend>Gerar Diário de Classe</legend>
+        <div class="row">
+            <label for="classe">
+                <strong>Selecione uma Turma</strong>
+                <small>Selecione uma turma de alunos.</small>
+            </label>
+            <div>
+                <?php echo $this->form->classe; ?>
+            </div>
+        </div>
+        <div class="row">
+            <label for="teacher">
+                <strong>Selecione um Professor</strong>
+                <small>Selecione um professor.</small>
+            </label>
+            <div>
+                <?php echo $this->form->teacher; ?>
+            </div>
+        </div>
+        <div class="row">
+            <label for="course">
+                <strong>Selecione um Curso</strong>
+                <small>Selecione um curso.</small>
+            </label>
+            <div>
+                <?php echo $this->form->course; ?>
+            </div>
+        </div>
+        <div class="row">
+            <label for="discipline">
+                <strong>Selecione uma Discliplina</strong>
+                <small>Selecione um discliplina.</small>
+            </label>
+            <div>
+                <?php echo $this->form->discipline; ?>
+            </div>
+        </div>
+        <div class="row">
+            <label for="discipline">
+                <strong>Selecione o Módulo</strong>
+                <small>Selecione um modulo.</small>
+            </label>
+            <div>
+                <?php echo $this->form->module; ?>
+            </div>
+        </div>
+    </fieldset>
+    <div class="actions">
+        <div class="left">
+            <?php echo $this->form->send; ?>
+        </div>
+    </div>
+</form>

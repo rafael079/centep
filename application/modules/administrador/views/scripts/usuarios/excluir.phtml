@@ -1,0 +1,18 @@
+<?php echo $this->headTitle()->prepend('Excluir Usuário'); ?>
+<h1 class="grid_12 margin-top no-margin-top-phone">Excluir Usuário</h1>
+
+<div class="grid_12">
+    <div class="box">
+        <div class="header">
+            <h2><span class="icon icon-warning-sign"></span>Confirmar Exclusão de Usuário</h2>
+        </div>
+        <div class="content center-elements">
+            <p>
+                Você tem certesa que deseja excluir o usuário: <span class="badge block blue dark"><?php echo strtoupper($this->results->name); ?></span> <strong>permanentemente</strong>?
+            </p>
+            <p>
+                <a class="button block red" href="<?php echo $this->url(array('module' => 'administrador', 'controller' => 'usuarios', 'action' => 'excluir', 'id' => $this->results->id, 'confirmar' => 1)); ?>">Confirmar Exclusão!</a>
+            </p>
+        </div>
+    </div>
+</div>

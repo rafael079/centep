@@ -1,0 +1,81 @@
+<?php echo $this->doctype(); ?>
+<html>
+    <head>
+        <?php echo $this->headMeta(); ?>
+        <?php echo $this->headTitle(); ?>
+        <link href="<?php echo $this->baseUrl('/static/img/favicon.ico'); ?>" rel="shortcut icon">
+        <link href='http://fonts.googleapis.com/css?family=Open+Sans:400italic,400,600,300,700,800,500' rel='stylesheet' type='text/css'>
+        <link rel="stylesheet" type="text/css" href="<?php echo $this->baseUrl('/static/css/style.css'); ?>" media="screen" />	
+        <link rel="stylesheet" type="text/css" href="<?php echo $this->baseUrl('/static/js/rs-plugin/css/settings.css'); ?>" media="screen" /> 
+        <?php echo $this->headLink(); ?>
+        <script type="text/javascript" src="<?php echo $this->baseUrl('/static/js/jquery-1.9.1.min.js'); ?>"></script>
+        <script type="text/javascript" src="<?php echo $this->baseUrl('/static/js/jquery-migrate-1.2.1.min.js'); ?>"></script>
+        <script type="text/javascript" src="<?php echo $this->baseUrl('/static/js/jquery.cookie.js'); ?>"></script>
+        <script type="text/javascript" src="<?php echo $this->baseUrl('/static/js/retina.js'); ?>"></script>
+        <script type="text/javascript" src="<?php echo $this->baseUrl('/static/js/bootstrap.min.js'); ?>"></script>
+        <script type="text/javascript" src="<?php echo $this->baseUrl('/static/js/rs-plugin/js/jquery.themepunch.plugins.min.js'); ?>"></script>
+        <script type="text/javascript" src="<?php echo $this->baseUrl('/static/js/rs-plugin/js/jquery.themepunch.revolution.min.js'); ?>"></script>	
+        <?php echo $this->headScript(); ?>
+    </head>
+    <body>
+        <div class="wide_cont" id="content">
+            <div class="top_line">
+                <div class="container">
+                    <div class="row">
+                        <div class="span6"><p>Centro Tecnológico e Formação Profissional</p></div>
+                        <div class="span6 pull-right">
+                            <ul class="social-links">
+                                <li class="facebook"><a href="http://www.facebook.com/notes/#!/profile.php?id=100003150794483&sk=notes" title="Curta nossa página no Facebook"><i class="icon-facebook icon-large"></i></a></li>          
+                            </ul>
+                        </div> 
+                    </div>
+                </div>
+            </div><!-- /top_line --> 
+            <div class="page_head" >
+                <div class="container">
+                    <div class="row">
+                        <div class="span3">
+                            <div class="logo">
+                                <a href="<?php echo $this->url(array('module' => 'default', 'controller' => 'index', 'action' => 'index')); ?>">
+                                    <img src="<?php echo$this->baseUrl('/static/img/logo.png'); ?>" alt="CENTEP - Centro Tecnológico e Formação Profissional" />
+                                </a>
+                            </div>
+                        </div>
+                        <div class="span9">
+                            <nav class="nav_menu">
+                                <ul class="menu">
+                                    <li class="color"><a href="<?php echo $this->url(array('module' => 'default', 'controller' => 'index', 'action' => 'index')); ?>">Home<div class="sub"><span class="visible-phone">&nbsp;</span>Página Inicial</div></a></li>
+                                    <li class="color"><a href="<?php echo $this->url(array('module' => 'cursos', 'controller' => 'index', 'action' => 'index')); ?>">Cursos<div class="sub"><span class="visible-phone">&nbsp;</span>Nossos Cursos</div></a></li>
+                                    <li class="color"><a href="<?php echo $this->url(array('module' => 'escola', 'controller' => 'index', 'action' => 'index')); ?>">A escola<div class="sub"><span class="visible-phone">&nbsp;</span>Sobre a Escola</div></a></li>
+                                    <li class="color"><a href="<?php echo $this->url(array('module' => 'social', 'controller' => 'index', 'action' => 'index')); ?>">Social<div class="sub"><span class="visible-phone">&nbsp;</span>Resp. Social</div></a></li>
+                                    <li class="color"><a href="<?php echo $this->url(array('module' => 'contato', 'controller' => 'index', 'action' => 'index')); ?>">Contato<div class="sub"><span class="visible-phone">&nbsp;</span>Entre em contato</div></a></li>
+                                    <li class="color"><a href="<?php echo $this->url(array('module' => 'login', 'controller' => 'index', 'action' => 'index')); ?>">Área<div class="sub"><span class="visible-phone">&nbsp;</span>de Usuários</div></a></li>
+                                </ul>
+                            </nav>
+                        </div>
+                    </div>
+                </div>
+            </div><!-- /page_head --> 
+            <?php echo $this->layout()->content; ?>
+            <div class="footer_bottom">
+                <div class="container ">
+                    <div class="row">
+                        <div class="span6">
+                            <div class="copyright">Copyright <?php echo date('Y'); ?> CENTEP. Criado por <a href="http://www.ombux.com.br/?criative" target="_blank" title="Criado por OmBux!"><img src="<?php echo$this->baseUrl('/static/img/ombux.png'); ?>" title="Criado por OmBux!" alt="OmBux!" /></a></div>
+                        </div>
+                        <div class="span6">
+                            <div class="foot_menu">
+                                <ul>
+                                    <li><a href="<?php echo $this->url(array('module' => 'default', 'controller' => 'index', 'action' => 'index')); ?>">Home</a></li>
+                                    <li><a href="<?php echo $this->url(array('module' => 'cursos', 'controller' => 'index', 'action' => 'index')); ?>">Nossos Cursos</a></li>
+                                    <li><a href="<?php echo $this->url(array('module' => 'escola', 'controller' => 'index', 'action' => 'index')); ?>">A Escola</a></li>
+                                    <li><a href="<?php echo $this->url(array('module' => 'contato', 'controller' => 'index', 'action' => 'index')); ?>">Entre em Contato</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div><!-- /footer -->
+        </div>
+    </body>
+</html>
